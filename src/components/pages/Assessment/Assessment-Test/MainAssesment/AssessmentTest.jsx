@@ -1,0 +1,115 @@
+import React from "react";
+import axios from "axios";
+import { useState } from "react";
+import { useEffect } from "react";
+import './assessTest.css'
+import Pagination from "../PaginationFile/Pagination";
+import useFetch from "../../Custom Hook/useFetch";
+// import ReactPaginate from 'react-paginate'
+import CircularProgress from '@mui/material/CircularProgress';
+import Question1 from "./Question1";
+import Navbar from "../../../../Menubar/Navbar";
+import Box from '@mui/material/Box';
+
+const AssessmentTest = () => {
+
+  // const url = `http://103.160.153.38:8020/limens/statements_view/`
+
+  const[questions,setQuestions] = useState([]);
+  const[loading,setLoading] = useState(false);
+
+  // let{data:questions, loading}  = useFetch("http://localhost:3004/questions")
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const [questionPerPage] = useState(1);
+
+  // useEffect(()=>{
+  //   const fetchQuestions = async () =>{
+  //     setLoading(true);
+  //     const res = await axios.post(url);
+  //     setQuestions(res.data);
+  //     setLoading(false);
+  //   }
+    
+  //   fetchQuestions();
+  // },[]);
+
+  useEffect(()=>{
+        setLoading(true);
+
+        axios.get('http://103.160.153.38:8020/limens/statements_view/')
+        .then( res =>{
+          setQuestions( res.data);
+          setLoading(false)
+        } )
+
+    },[questionPerPage]);
+
+
+  if(!questions) return <CircularProgress size="10rem" style={{ display:"flex", margin:"auto", height:"98.5vh" }}/>
+
+  //Get Current Question
+
+  const indeOfLastQues = currentPage * questionPerPage;
+  const indeOfFirstQues = indeOfLastQues - questionPerPage;
+  const currentQueston = questions.slice(indeOfFirstQues, indeOfLastQues);
+
+  //--------------------------------------------------------------------------------------
+  return (
+  <>
+       <div className='bgcolor'>
+      <Navbar/>
+      <Box height={30} />
+        <Box sx={{ display: 'flex' }}>
+       
+        <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+      <div className="assessment-test" >
+        {/* <div className='header w-100'>
+          <h1>Online Assesment Test</h1>
+          <div className='pageNo-Timer'>
+            <h3> Question {indeOfFirstQues + 1} of {questions.length}</h3>
+            <Timer />
+          </div>
+        </div> */}
+        <div className="question-block" >
+          <Question1
+            questions={currentQueston} 
+            loading={loading} 
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
+            indeOfFirstQues={ indeOfFirstQues }
+            totalQuestions={questions.length}
+            questionPerPage={questionPerPage}
+          />
+
+          <Pagination
+            questionPerPage={questionPerPage}
+            totalQuestions={questions.length}
+            setCurrentPage={setCurrentPage}
+            currentPage={currentPage}
+          />
+
+        </div>
+
+      </div>
+      {/* <div className="question-block">
+              <Questions2 questions={questions} />
+            </div> */}
+ 
+    </Box>
+    </Box>
+    </div>
+  </>
+  )
+}
+
+export default AssessmentTest;
+
+
+
+
+
+
+
+
+

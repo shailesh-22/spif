@@ -1,0 +1,77 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+.test-result{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center ;
+    background: url("https://www.spif.in/wp-content/uploads/2021/08/about1-1.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.test-card{
+    width: 50%;
+    padding: 10px;
+    border-radius: 20px;
+    border: 4px solid rgba(174, 174, 197, 0.74);
+}
+.card-body h5{
+    text-align: center;
+    font-weight: bolder;
+    color: #00AD53;
+}
+/* .card-body .divider{
+    margin: 5px 0;
+} */
+.card-body h6{
+    font-weight: bolder;
+    color: #00AD53;
+}
+.card-body .card-result{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    letter-spacing: 1px;
+    border: 1px solid rgba(128, 128, 128, 0.685);
+    padding: 15px;
+    font-weight: bold;
+}
+.card-body .card-result p{
+    font-size: 15px;
+    margin: 5px 0;
+}
+.card-body .card-feedback p{
+    font-size: 15px;
+    font-weight: bolder;
+    text-align: center;
+    border: 1px solid rgba(128, 128, 128, 0.685);
+    padding: 10px;
+}
+a{
+    text-decoration: none;
+}
+.card-link{
+    width: 200px;
+}
+.certi-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card-body .card-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* .card-header h3{
+    font-size: 15px;
+} */
+
+@media ( max-width:700px ){
+    .test-card{
+        width: 100%;
+    }
+}
