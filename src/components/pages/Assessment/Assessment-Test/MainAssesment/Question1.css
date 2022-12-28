@@ -3,3 +3,12 @@
     border: 7px solid #A6D2AD;
     margin: 5px;
 }
+
+#submit{
+    font-size: 15px !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    
+}
+/* .btn{
+    --mdb-btn-padding-x: unset !important; 
+} */

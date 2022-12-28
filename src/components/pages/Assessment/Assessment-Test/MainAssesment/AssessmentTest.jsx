@@ -56,14 +56,9 @@ const AssessmentTest = () => {
 
   //--------------------------------------------------------------------------------------
   return (
-  <>
-       <div className='bgcolor'>
+    <div>
       <Navbar/>
-      <Box height={30} />
-        <Box sx={{ display: 'flex' }}>
-       
-        <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-      <div className="assessment-test" >
+      <div className="assessment-test" style={{ marginTop: "64px" }}>
         {/* <div className='header w-100'>
           <h1>Online Assesment Test</h1>
           <div className='pageNo-Timer'>
@@ -95,11 +90,7 @@ const AssessmentTest = () => {
       {/* <div className="question-block">
               <Questions2 questions={questions} />
             </div> */}
- 
-    </Box>
-    </Box>
     </div>
-  </>
   )
 }
 

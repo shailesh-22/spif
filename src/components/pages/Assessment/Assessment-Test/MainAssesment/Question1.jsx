@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 // import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { Box, Popper, Typography } from '@mui/material'
+import {  Popper, Typography } from '@mui/material'
 import QuestionHeader from './QuestionHeader';
 import Timer from './Timer';
 import CircularProgress from "@mui/material/CircularProgress";
@@ -209,7 +209,7 @@ const Question1 = ({ questions, loading, questionPerPage, currentPage, setCurren
         
           { currentPage === pageNumber.length? 
               (<Link to='/test-result'>
-                <button type="submit" class="btn btn-primary">Submit Test</button>
+                <button type="submit" class="btn btn-primary" id='submit'>Submit Test</button>
               </Link>) : null
           }
         </form>

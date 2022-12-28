@@ -7,6 +7,9 @@ import DialogTitle from '@mui/material/DialogTitle';
 import { TextField } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import swal from "sweetalert";
+import './dialog.css'
+
+
 export default function AlertDialog({open,handleClose}) {
 
   let navigate = useNavigate();
