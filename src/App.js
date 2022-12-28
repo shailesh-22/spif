@@ -13,12 +13,16 @@ import AdminStatement from './components/pages/Assessment/Admin-Statement/AdminS
 import Login from './components/Login/Login';
 import Signup from './components/Signup/Signup';
 import Protected from './components/pages/protectedRoutes/Protected';
+import Login2 from './components/Login/Login2';
+import Signup2 from './components/Signup/Signup2';
 function App() {
   return (
     <div>
       <BrowserRouter>
       <Routes>
       <Route path="/" exact element={ <Login/> }></Route>
+      <Route path="/login2" exact element={ <Login2/> }></Route>
+      <Route path="/signup2" exact element={ <Signup2/> }></Route>
       <Route path="/signup" exact element={ <Signup/> }></Route>
       
         <Route path="/" exact element={<Protected><Sidenav/></Protected>}></Route>

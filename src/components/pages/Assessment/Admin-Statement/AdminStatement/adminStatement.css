@@ -2,12 +2,12 @@
     display: grid;
     justify-content: center;
 }
-.admin-statement{
+/* .admin-statement{
     background: linear-gradient(to right, rgb(240, 235, 235), rgb(247, 244, 244));
     padding: 10px;
     font-family: 'Times New Roman', Times, serif;
     width: auto ;
-}
+} */
 .admin-statement .header{
     background: linear-gradient(to right, rgba(255, 255, 255, 0.726), rgba(236, 229, 229, 0.267));
     margin: 10px 0;

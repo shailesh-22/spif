@@ -65,7 +65,7 @@ const AdminStatement = () => {
     <>
        <div className='bgcolor'>
       <Navbar/>
-      <Box height={30} />
+      <Box height={50} />
         <Box sx={{ display: 'flex' }}>
         <Sidenav/>
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>

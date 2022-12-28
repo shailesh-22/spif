@@ -76,7 +76,7 @@ const Register3 = () => {
    
        <div className='bgcolor'>
       <Navbar/>
-      <Box height={40} />
+      <Box height={50} />
         <Box sx={{ display: 'flex' }}>
         <Sidenav/>
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>

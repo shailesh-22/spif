@@ -11,6 +11,7 @@ import '../Dashboard/dash.css'
 import StorefrontIcon from '@mui/icons-material/Storefront';
 import CreditCardIcon from '@mui/icons-material/CreditCard';
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
+import CountUp from 'react-countup';
 
 
 const Dashboard = () => {
@@ -31,7 +32,7 @@ const Dashboard = () => {
                       <CreditCardIcon/>
                     </div>
                     <Typography gutterBottom variant="h5" component="div"  sx={{ color:"#ffffff"}}>
-                      $500.00
+                     $<CountUp delay={0.4} end={500.00} duration={0.3}/>
                     </Typography>
                     <Typography gutterBottom variant="body2" component="div" sx={{ color:"#ccd1d1"}}>
                      Total Earnings
@@ -45,7 +46,7 @@ const Dashboard = () => {
                       <ShoppingBagIcon/>
                     </div>
                     <Typography gutterBottom variant="h5" component="div"  sx={{ color:"#ffffff"}}>
-                     $900.00
+                    $<CountUp delay={0.4} end={900.00} duration={0.3}/>
                     </Typography>
                     <Typography gutterBottom variant="body2" component="div" sx={{ color:"#ccd1d1"}}>
                      Total orders
@@ -63,7 +64,7 @@ const Dashboard = () => {
                     <StorefrontIcon/>
                     </div>
                     <div className="paddingall">
-                    <span className="pricetitle">$203K</span>
+                    <span className="pricetitle">$<CountUp delay={0.4} end={203} duration={0.3}/>K</span>
                     <br/>
                     <span className="pricesubtitle">Total income</span>
                     </div>
@@ -77,7 +78,7 @@ const Dashboard = () => {
                     <StorefrontIcon/>
                     </div>
                     <div className="paddingall">
-                    <span className="pricetitle">$203K</span>
+                    <span className="pricetitle">$<CountUp delay={0.4} end={203} duration={0.3}/>K</span>
                     <br/>
                     <span className="pricesubtitle">Total income</span>
                     </div>

@@ -1,4 +1,5 @@
 .css-12i7wg6-MuiPaper-root-MuiDrawer-paper{
-    background-image: linear-gradient(to bottom, #346BFF, #00AD53); 
+    background-image: linear-gradient(to bottom, #346BFF, #00AD53) !important; 
     color: #ffffff !important;
+    background-color: unset !important;
 }
