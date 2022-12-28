@@ -86,17 +86,18 @@ export default function Sidenav() {
   const open = useAppStore((state) => state.dopen);
 
   return (
-    <Box sx={{ display: 'flex' }}>
+    <div className='sidenav'>
+    <Box sx={{ display: 'flex' }}  >
       <CssBaseline />
       <Box height={30} />
-      <Drawer variant="permanent" open={open}>
+      <Drawer variant="permanent" open={open}  >
         <DrawerHeader>
           <IconButton>
             {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
           </IconButton>
         </DrawerHeader>
         <Divider />
-        <List>
+        <List >
         <ListItem  disablePadding sx={{ display: 'block' }} onClick={()=>{ navigate("/dashboard")}}>
               <ListItemButton
                 sx={{
@@ -170,5 +171,6 @@ export default function Sidenav() {
       </Drawer>
 
     </Box>
+    </div>
   );
 }
