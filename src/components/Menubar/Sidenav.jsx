@@ -86,7 +86,7 @@ export default function Sidenav() {
   const open = useAppStore((state) => state.dopen);
 
   return (
-    <div className='sidenav'>
+    
     <Box sx={{ display: 'flex' }}  >
       <CssBaseline />
       <Box height={30} />
@@ -171,6 +171,6 @@ export default function Sidenav() {
       </Drawer>
 
     </Box>
-    </div>
+ 
   );
 }
