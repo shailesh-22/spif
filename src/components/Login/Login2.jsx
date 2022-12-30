@@ -5,17 +5,17 @@ import { Link } from 'react-router-dom'
 const Login2 = () => {
   return (
     <div>
-<section className="vh-100" style={{backgroundColor: '#9A616D'}}>
-  <div className="container py-5 h-100">
+<section className="vh-100" >
+  <div className="container  h-100">
     <div className="row d-flex justify-content-center align-items-center h-100">
       <div className="col col-xl-10">
         <div className="card" style={{borderRadius: '1rem'}}>
           <div className="row g-0">
-            <div className="col-md-6 col-lg-5 d-none d-md-block">
-              <img src="https://www.spif.in/wp-content/uploads/2021/09/mains.jpg" alt="login form"  className="img-fluid" style={{borderRadius: '1rem 0 0 1rem', height:"533px", width:"500px"}} />
-            </div>
+           
+            
+
             <div className="col-md-6 col-lg-7 d-flex align-items-center">
-              <div className="card-body p-4 p-lg-5 text-black">
+              <div className="card-body p-4 p-lg-5 text-black ">
                 <form>
                   <div className="d-flex justify-content-center align-items-center mb-3 pb-1">
                     
@@ -41,6 +41,10 @@ const Login2 = () => {
                 </form> 
               </div>
             </div>
+            <div className="col-md-6 col-lg-5 d-none d-md-block " style={{backgroundColor:"#00d084",}}  >
+              <img src="https://www.spif.in/wp-content/uploads/2021/09/mains.jpg" alt="login form"  className="img-fluid" style={{borderRadius: '1rem 0 0 1rem',  width:"500px", marginTop:"150px"}} />   
+            </div>
+
           </div>
         </div>
       </div>

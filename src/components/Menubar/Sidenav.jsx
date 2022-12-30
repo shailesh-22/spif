@@ -164,6 +164,30 @@ export default function Sidenav() {
                 <ListItemText primary="Statements" sx={{ opacity: open ? 1 : 0 }} />
               </ListItemButton>
             </ListItem>
+
+            
+            <ListItem  disablePadding sx={{ display: 'block' }}  onClick={()=>{ navigate("/Data-table")}}>
+              <ListItemButton
+                sx={{
+                  minHeight: 48,
+                  justifyContent: open ? 'initial' : 'center',
+                  px: 2.5,
+                }}
+              >
+                <ListItemIcon
+                  sx={{
+                    minWidth: 0,
+                    mr: open ? 3 : 'auto',
+                    justifyContent: 'center',
+                    color:"#ffffff"
+                  }}
+                >
+                <TocIcon /> 
+                </ListItemIcon>
+                <ListItemText primary="Statements2" sx={{ opacity: open ? 1 : 0 }} />
+              </ListItemButton>
+            </ListItem>
+          
           
 
         </List>

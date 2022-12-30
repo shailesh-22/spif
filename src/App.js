@@ -15,16 +15,22 @@ import Signup from './components/Signup/Signup';
 import Protected from './components/pages/protectedRoutes/Protected';
 import Login2 from './components/Login/Login2';
 import Signup2 from './components/Signup/Signup2';
+import DataTableTest from './components/pages/Assessment/Admin-Statement/AdminStatement/DataTableTest';
+
 function App() {
+
+
+
   return (
     <div>
       <BrowserRouter>
       <Routes>
-      <Route path="/" exact element={ <Login/> }></Route>
+    
+      <Route exact path="/"  element={  <Login/> }></Route>
       <Route path="/login2" exact element={ <Login2/> }></Route>
       <Route path="/signup2" exact element={ <Signup2/> }></Route>
       <Route path="/signup" exact element={ <Signup/> }></Route>
-      
+      <Route path="/Data-table" exact element={ <DataTableTest /> }></Route>
         <Route path="/" exact element={<Protected><Sidenav/></Protected>}></Route>
         <Route path="/navbar" exact element={<Protected  ><Navbar/></Protected> }></Route>
         <Route path="/dashboard" element={<Protected  > <Dashboard /> </Protected>} />
