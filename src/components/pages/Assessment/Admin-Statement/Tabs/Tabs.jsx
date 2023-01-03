@@ -214,30 +214,6 @@ const Tabs = ({ questions }) => {
           })
         }
       </div>
-
-      <select className='col-12 select-slides'  >
-      {
-        questions &&  questions.map((tab, i) => {
-            return (
-                <option key={i}
-                        id={tab.sStatementID}
-                        value={tab.sStatementID}
-                        onChange={handleOption}
-                        onSelect={handleTabClick}
-                >
-                  <button
-                    key={i} 
-                    id={tab.sStatementID}
-                    // disabled={currentTab === `${tab.sStatementID}`}
-                    onClick={handleTabClick}
-                  >
-                    Slide <span> {i + 1} </span>
-                  </button>
-                </option>
-            )
-          })
-        }
-      </select>
       <div className="content">
         { questions &&  questions.map((tab, i) => (
           <div key={i}>
