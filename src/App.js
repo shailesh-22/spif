@@ -30,7 +30,7 @@ function App() {
       <Route path="/login2" exact element={ <Login2/> }></Route>
       <Route path="/signup2" exact element={ <Signup2/> }></Route>
       <Route path="/signup" exact element={ <Signup/> }></Route>
-      <Route path="/Data-table" exact element={ <DataTableTest /> }></Route>
+      <Route path="/Data-table" exact element={<Protected> <DataTableTest /> </Protected>  }></Route>
         <Route path="/" exact element={<Protected><Sidenav/></Protected>}></Route>
         <Route path="/navbar" exact element={<Protected  ><Navbar/></Protected> }></Route>
         <Route path="/dashboard" element={<Protected  > <Dashboard /> </Protected>} />
