@@ -67,7 +67,7 @@ const deleteUser = (id) => {
   }).then((result) => {
     if (result.value) {
       deleteApi()
-     
+      // window.location.reload()
     }
   })
 }
@@ -83,9 +83,9 @@ let deleteApi = async () => {
         "Content-Type": "application/json",
       },
     }).then(() => Swal.fire("Deleted!", "Your file has been deleted.", "success")   
-    );  
+    ).then(() => { window.location.reload()})  
     localStorage.removeItem("deleteMe");
-   window.location.reload()
+  
 };
 
 const navigate = useNavigate();
@@ -121,7 +121,7 @@ const navigate = useNavigate();
                <Table stickyHeader aria-label="sticky table">
                  <TableHead>
                    <TableRow>
-                     <TableCell align="left">ID</TableCell>
+                     <TableCell align="left">Q.No</TableCell>
                      <TableCell align="left"> Questions</TableCell>
                      <TableCell align="left">Actions</TableCell>
                    </TableRow>
