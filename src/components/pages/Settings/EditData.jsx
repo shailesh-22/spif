@@ -11,50 +11,23 @@ import Sidenav from "../../Menubar/Sidenav";
 import axios from "axios";
 import TextField from '@mui/material/TextField';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import { Link, useNavigate } from "react-router-dom";
-
+import { Link, useNavigate, useParams } from "react-router-dom";
+import { getUser } from '../../../service/api';
 
 export default function EditData() {
 
-const [initialValues, setInitialValues] = useState();
-
-    const baseURL = 'http://103.160.153.38:8020/limens/statements_view/'
-  const [page, setPage] = useState(0);
-  const [rows, setRows] = useState([]);
-  const [rowdata, setRowdata] = useState([]);
-  const [rowsPerPage, setRowsPerPage] = useState(10);
-
-  useEffect(() => {
-      axios.get(baseURL).then((response) => {
-        setRows(response.data)
-      });
-
-    
-  },[]);
-
-
-  const handleChangePage = (event, newPage) => {
-    setPage(newPage);
-  };
-
-  const handleChangeRowsPerPage = (event) => {
-    setRowsPerPage(+event.target.value);
-    setPage(0);
-  };
-
-  useEffect(() => {
-  if (rowdata)
-  {
-    setRows([rowdata]);
-  } else 
-  {
-    axios.get(baseURL).then((response) => {
-      setRows(response.data)
-    });
-  }
   
-},[rowdata]);
+const [sDescription, setsDescription] = useState();
+const { sStatementID:id } = useParams();
 
+useEffect(() => {
+  getUserData();
+},[])
+
+const getUserData = async () => {
+ let response = await getUser(id);
+ console.log(response);
+}
 
 const navigate = useNavigate();
 
@@ -70,20 +43,21 @@ const navigate = useNavigate();
          <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
  
  
- 
- 
            <Paper sx={{ width: "100%", overflow: "hidden" }}>
              <TableContainer sx={{ maxHeight: 440 }}>
                <Table stickyHeader aria-label="sticky table">
                  <TableHead>
+                  {/* <TableHead style={{display:'flex', alignItems:'center'}}>Update Statement</TableHead> */}
+                  
                    <TableRow>
-                     <TableCell align="left">Q.No</TableCell>
+                   
+                     {/* <TableCell align="left">Q.No</TableCell> */}
                      <TableCell align="left"> Questions</TableCell>
                      <TableCell align="left"> Options</TableCell>
                      <TableCell align="left"> Prompt</TableCell>
                      <TableCell align="left"> Answer</TableCell>
                      <TableCell align="left">Actions</TableCell>
-                 
+                
                    </TableRow>
                  </TableHead>
                  <TableBody>
@@ -95,8 +69,8 @@ const navigate = useNavigate();
                            tabIndex={-1}
                            
                          >
-                           <TableCell align="left">   </TableCell>
-                           <TableCell align="left"> <TextField />  </TableCell>
+                         
+                           <TableCell align="left"> <TextField type="text" value={sDescription} onChange={(e)=>{setsDescription(e.target.value)}} />  </TableCell>
                            <TableCell align="left"> <TextField />   </TableCell>
                            <TableCell align="left"> <TextField />    </TableCell>
                            <TableCell align="left"> <TextField />   </TableCell>
@@ -104,7 +78,7 @@ const navigate = useNavigate();
                            <Stack spacing={2} direction="row">
                             <Button
                             variant="contained" color="success"
-                            // onClick={}
+                            // onClick={()=>{ handleSubmit()}}
                             > 
                                 Update 
                             </Button>

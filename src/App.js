@@ -17,6 +17,7 @@ import Login2 from './components/Login/Login2';
 import Signup2 from './components/Signup/Signup2';
 import DataTableTest from './components/pages/Settings/DataTableTest';
 import EditData from './components/pages/Settings/EditData';
+import Sample from './components/pages/Settings/Sample';
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
       <Routes>
     
       <Route exact path="/"  element={  <Login/> }></Route>
+      <Route exact path="/sample"  element={ <Sample /> }></Route>
       <Route path="/login2" exact element={ <Login2/> }></Route>
       <Route path="/signup2" exact element={ <Signup2/> }></Route>
       <Route path="/signup" exact element={ <Signup/> }></Route>
