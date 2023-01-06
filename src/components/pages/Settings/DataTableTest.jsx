@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Paper, Box , Stack} from "@mui/material";
+import { Paper, Box , Stack, Button} from "@mui/material";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -16,13 +16,33 @@ import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import Swal from 'sweetalert2'
 import { Link, Navigate, useNavigate } from "react-router-dom";
+import Modal from '@mui/material/Modal';
+import Typography from '@mui/material/Typography';
+import AddData from "./AddData";
+
+const style = {
+  position: 'absolute',
+  top: '45%',
+  left: '54%',
+  transform: 'translate(-50%, -50%)',
+  width: 'auto',
+  height: 'auto',
+  bgcolor: 'background.paper',
+  boxShadow: 24,
+  p: 4,
+};
 
 export default function DataTableTest() {
     const baseURL = 'http://103.160.153.38:8020/limens/statements_view/'
+
+    const [EditData, setEditData] = useState('false');
   const [page, setPage] = useState(0);
   const [rows, setRows] = useState([]);
   const [rowdata, setRowdata] = useState([]);
   const [rowsPerPage, setRowsPerPage] = useState(10);
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
   useEffect(() => {
       axios.get(baseURL).then((response) => {
@@ -54,6 +74,8 @@ export default function DataTableTest() {
   }
   
 },[rowdata]);
+
+/*  Delete function  */
 
 const deleteUser = (id) => {
   Swal.fire({
@@ -92,16 +114,36 @@ const navigate = useNavigate();
   return (
 
     <>
+    
     {rows ? (
+      
        <div className="bgcolor">
+
        <Navbar />
        <Box height={70} />
        <Box sx={{ display: "flex" }}>
          <Sidenav />
          <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+   <div>
+   
+   {/*   Popup modal to Add and Edit  */  }
+
+      <Modal
+        open={open}
+        //onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+         <AddData CloseEvent={handleClose}/>
+        </Box>
+      </Modal>
+      
+    </div>
  
- 
-         <Box component="span" m={1} display="flex" justifyContent="start" >
+   {/*   Auto select using dropdown function  */  }
+
+         <Box component="span" m={1} display="flex" justifyContent="space-between" >
                   <Autocomplete
                     disablePortal
                     id="combo-box-demo"
@@ -113,8 +155,17 @@ const navigate = useNavigate();
                       <TextField {...params} label="Statements" />
                     )}
                   />
+                   <Box   m={1}  >
+                  <Button variant="contained" onClick={handleOpen}>
+                  Add Slide
+                  </Button>
+                  </Box>
+           
+         
          </Box>
- 
+        
+          
+       {/*   Data table  */  }
  
            <Paper sx={{ width: "100%", overflow: "hidden" }}>
              <TableContainer sx={{ maxHeight: 440 }}>
@@ -139,8 +190,11 @@ const navigate = useNavigate();
                          >
                            <TableCell align="left">  {i+1} </TableCell>
                            <TableCell align="left">  {row.sDescription} </TableCell>
+                           <TableCell align="left">  {} </TableCell>
                            {/* <TableCell align="left">  {row.sOptions[1].text} </TableCell> */}
                              
+                           {/*   Delete and Edit Buttons with callback function  */  }
+
                            <TableCell align="left"> 
                            <Stack spacing={2} direction="row">
                             <EditIcon
@@ -180,6 +234,8 @@ const navigate = useNavigate();
                  </TableBody>
                </Table>
              </TableContainer>
+
+             {/*   Pagination function */  }
              <TablePagination
                rowsPerPageOptions={[10, 25, 100]}
                component="div"
@@ -192,11 +248,13 @@ const navigate = useNavigate();
            </Paper>
          </Box>
        </Box>
+
+       
      </div>
     ):(
       <h2>Loading...</h2>
     )}
-   
+
     </>
   );
 }
