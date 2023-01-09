@@ -287,7 +287,7 @@ const Tabs = ({ questions }) => {
                                 <TextareaAutosize
                                   maxRows={4}
                                   aria-label="maximum height"
-                                  defaultValue={option.text}
+                                  defaultValue={option.text} 
                                   onChange={handleChange}
                                   style={{
                                     width: "100%",

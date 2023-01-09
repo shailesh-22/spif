@@ -20,6 +20,24 @@ const initialValues = {
       "value": "",
       "isAnswer": "",
       "isPrompt": ""   
+    },
+    {
+      "text": "",
+      "value": "",
+      "isAnswer": "",
+      "isPrompt": ""   
+    },
+    {
+      "text": "",
+      "value": "",
+      "isAnswer": "",
+      "isPrompt": ""   
+    },
+    {
+      "text": "",
+      "value": "",
+      "isAnswer": "",
+      "isPrompt": ""   
     }
   ]
 }
@@ -41,7 +59,7 @@ const addUserDetails = async () => {
 await addUser(user)
 CloseEvent()
  Swal.fire("Added!", "Statement has been added.", "success")
-.then(() => { window.location.reload()}) 
+ 
 };
 
    
