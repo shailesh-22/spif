@@ -15,27 +15,30 @@ import Autocomplete from '@mui/material/Autocomplete'
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import Swal from 'sweetalert2'
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import Modal from '@mui/material/Modal';
-import Typography from '@mui/material/Typography';
 import AddData from "./AddData";
+import { getUsers } from "../../../service/api";
 
 const style = {
   position: 'absolute',
   top: '45%',
   left: '54%',
   transform: 'translate(-50%, -50%)',
-  width: 'auto',
-  height: 'auto',
+ 
   bgcolor: 'background.paper',
   boxShadow: 24,
   p: 4,
 };
 
 export default function DataTableTest() {
+
+
+  const [users, setUsers] = useState([]);
+
     const baseURL = 'http://103.160.153.38:8020/limens/statements_view/'
 
-    const [EditData, setEditData] = useState('false');
+
   const [page, setPage] = useState(0);
   const [rows, setRows] = useState([]);
   const [rowdata, setRowdata] = useState([]);
@@ -43,6 +46,16 @@ export default function DataTableTest() {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
+  useEffect(() => {
+    getUsersDetails();
+  }, [])
+
+  const getUsersDetails = async () => {
+    let response = await getUsers();
+    console.log(response);
+    setUsers(response.data)
+  }
 
   useEffect(() => {
       axios.get(baseURL).then((response) => {
@@ -105,12 +118,14 @@ let deleteApi = async () => {
         "Content-Type": "application/json",
       },
     }).then(() => Swal.fire("Deleted!", "Your file has been deleted.", "success")   
-    ).then(() => { window.location.reload()})  
+    ) 
+    getUsersDetails(); 
     localStorage.removeItem("deleteMe");
   
 };
 
 const navigate = useNavigate();
+
   return (
 
     <>
@@ -126,7 +141,7 @@ const navigate = useNavigate();
          <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
    <div>
    
-   {/*   Popup modal to Add and Edit  */  }
+   {/*   Popup modal to Add */  }
 
       <Modal
         open={open}
@@ -232,6 +247,25 @@ const navigate = useNavigate();
                        );
                      })}
                  </TableBody>
+                 {/* <TableBody>
+                {  users.map(user => (
+                  <TableRow>
+                    <TableCell>
+                      {user.sOptions[0].text}
+                    </TableCell>
+                    <TableCell>
+                      {user.sOptions[1].text}
+                    </TableCell>
+                    <TableCell>
+                      {user.sOptions[2].text}
+                    </TableCell>
+                    <TableCell>
+                      {user.sOptions[3].text}
+                    </TableCell>
+                  </TableRow>
+                ))}
+                 </TableBody> */}
+
                </Table>
              </TableContainer>
 
