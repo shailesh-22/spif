@@ -5,7 +5,7 @@ import Dashboard from './components/pages/Dashboard/Dashboard';
 
 import AssessmentTest from './components/pages/Assessment/Assessment-Test/MainAssesment/AssessmentTest'
 
-import Register3 from './components/Registration/Register3'
+import Register from './components/Registration/Register'
 import TermsConditions from './components/pages/Assessment/Assessment-Test/Terms & Condions/TermsConditions'
 import TestResult from './components/pages/Assessment/Assessment-Test/TestCompletionPage/TestResult/TestResult';
 import CertificationPage from './components/pages/Assessment/Assessment-Test/TestCompletionPage/Certification/CertificationPage';
@@ -38,7 +38,7 @@ function App() {
         <Route path="/navbar" exact element={<Protected  ><Navbar/></Protected> }></Route>
         <Route path="/dashboard" element={<Protected  > <Dashboard /> </Protected>} />
       
-        <Route path="/register3" element={<Protected> <Register3 /> </Protected>} />
+        <Route path="/register" element={<Protected> <Register /> </Protected>} />
         <Route path="/terms_conditions" element={<Protected>  <TermsConditions/> </Protected>} />
         <Route path="/assessment-test" element={<Protected> <AssessmentTest/> </Protected>} />
         <Route path="/test-result" element={<Protected>  <TestResult/> </Protected>} />
