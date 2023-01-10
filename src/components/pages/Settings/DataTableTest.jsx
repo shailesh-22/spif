@@ -125,6 +125,7 @@ let deleteApi = async () => {
 };
 
 const navigate = useNavigate();
+
   return (
 
     <>

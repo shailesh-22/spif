@@ -327,24 +327,7 @@ const AdminStatement = () => {
                                         </div>
                                         ))
                                       }
-                                    </TableBody> */}
-                                    {/* <TableBody>
-                                      {row.sOptions.map((option,i) =>
-                                        
-                                          <TableRow
-                                            key={i}
-                                            sx={{
-                                              "&:last-child td, &:last-child th": {
-                                                border: 0,
-                                              },
-                                            }}
-                                          >
-
-                                          </TableRow>
-                                        )
-
-                                      }
-                                    </TableBody> */}
+                                    </TableBody> */} 
                                     {/* <TableBody>
                                 {row.sOptions.map((option, i) => (
                                   <TableRow
