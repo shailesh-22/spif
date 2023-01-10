@@ -15,11 +15,11 @@ import ListItemText from '@mui/material/ListItemText';
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import AssessmentIcon from "@mui/icons-material/Assessment";
 import TocIcon from "@mui/icons-material/Toc";
-import Accordion from '@mui/material/Accordion';
-import AccordionSummary from '@mui/material/AccordionSummary';
-import AccordionDetails from '@mui/material/AccordionDetails';
-import Typography from '@mui/material/Typography';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+// import Accordion from '@mui/material/Accordion';
+// import AccordionSummary from '@mui/material/AccordionSummary';
+// import AccordionDetails from '@mui/material/AccordionDetails';
+// import Typography from '@mui/material/Typography';
+// import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 import { useNavigate } from 'react-router-dom';
 import { useAppStore } from '../../appStore';
@@ -120,7 +120,7 @@ export default function Sidenav() {
               </ListItemButton>
             </ListItem>
 
-            <ListItem  disablePadding sx={{ display: 'block' }} onClick={()=>{ navigate("/register3")}}>
+            <ListItem  disablePadding sx={{ display: 'block' }} onClick={()=>{ navigate("/register")}}>
               <ListItemButton
                 sx={{
                   minHeight: 48,

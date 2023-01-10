@@ -8,7 +8,7 @@ import {
   Button,
   Box,
 } from '@mui/material';
-import React from "react";
+import React, { useState } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
@@ -23,11 +23,10 @@ import FormControl from "@mui/material/FormControl";
 
 import FormDialog from './Dialog'
 import Navbar from '../Menubar/Navbar';
-import Sidenav from '../Menubar/Sidenav';
 
-const Register3 = () => {
+const Register = () => {
   
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false); 
 
   // const handleClickOpen = () => {
   //   setOpen(true);
@@ -78,11 +77,10 @@ const Register3 = () => {
       <Navbar/>
       <Box height={50} />
         <Box sx={{ display: 'flex' }}>
-        <Sidenav/>
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
    
       <Typography
-        gutterbutton
+        gutterbutton="true"
         variant="h5"
         align="center"
         style={{ background: "#62C2CF", maxWidth:"1000px", margin: "0 auto" }}
@@ -94,7 +92,7 @@ const Register3 = () => {
         elevation={10}
       >
         <CardContent>
-          <Typography gutterbutton variant="h7">
+          <Typography gutterbutton="true" variant="h7">
             Fill out your Basic details
           </Typography>
           <form>
@@ -102,7 +100,7 @@ const Register3 = () => {
               variant="body2"
               align="left"
               style={{ padding: "3px 0px 0px" }}
-              gutterbutton
+              gutterbutton="true"
             >
               Personal info :
             </Typography>
@@ -303,7 +301,7 @@ const Register3 = () => {
 
             <Typography
               variant="body2"
-              gutterbutton
+              gutterbutton="true"
               style={{ padding: "7px 0px 0px" }}
             >
               Address :
@@ -461,4 +459,4 @@ const Register3 = () => {
   );
 };
 
-export default Register3;
+export default Register;

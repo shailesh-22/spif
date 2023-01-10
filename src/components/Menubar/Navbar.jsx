@@ -143,7 +143,7 @@ export default function Navbar() {
             component="div"
             sx={{ display: { xs: 'none', sm: 'block' } }}
           >
-           <Link to="/dashboard" > <img src="https://www.spif.in/wp-content/uploads/2021/08/new-logo3.png" alt="logo" style={{ width: "125px", backgroundColor:"white" }} /> </Link>
+            <img src="https://www.spif.in/wp-content/uploads/2021/08/new-logo3.png" alt="logo" style={{ width: "125px", backgroundColor:"white" }} /> 
           </Typography>
           
           <Box sx={{ flexGrow: 1 }} />
