@@ -14,7 +14,8 @@ const CertificationPage = () => {
 
     const downloadImage = () => {
         saveAs('image_url', 'Creative Photography Participation Certificate Template-1.jpeg'); // Display your image url here.
-        navigate('/dashboard')
+        localStorage.removeItem("token")
+        navigate("/")
     }
 
 

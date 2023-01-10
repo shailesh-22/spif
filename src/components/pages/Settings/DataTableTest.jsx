@@ -204,13 +204,13 @@ const navigate = useNavigate();
                          >
                            <TableCell align="left">  {i+1} </TableCell>
                            <TableCell align="left">  {row.sDescription} </TableCell>
-                           <TableCell align="left">  {} </TableCell>
+                           
                            {/* <TableCell align="left">  {row.sOptions[1].text} </TableCell> */}
                              
                            {/*   Delete and Edit Buttons with callback function  */  }
 
                            <TableCell align="left"> 
-                           <Stack spacing={2} direction="row">
+                           <Stack spacing={2} direction="row" align="left">
                             <EditIcon
                             
                             style={{

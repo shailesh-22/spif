@@ -17,17 +17,33 @@ const Login = () => {
         e.preventDefault(); 
         try {
             const url = "http://103.160.153.38:8020/accounts/auth/";
+
+          
             
             const { data: res } = await axios.post(url, data);
-            localStorage.setItem("token", JSON.stringify(res));
-            swal({
-                title: "Done!",
-                text: "Login Successfull !",
-                icon: "success",
-                button: "Ok",
-              });
-            window.location = "/dashboard";   
-
+            if (res.is_admin === true)
+             {
+                localStorage.setItem("token", JSON.stringify(res));
+                swal({
+                    title: "Done!",
+                    text: "Login Successfull !",
+                    icon: "success",
+                    button: "Ok",
+                  });
+                window.location = "/dashboard"; 
+                
+            } else if(res.is_admin === false) 
+            {
+                localStorage.setItem("token", JSON.stringify(res));
+                swal({
+                    title: "Done!",
+                    text: "Login Successfull !",
+                    icon: "success",
+                    button: "Ok",
+                  });
+                window.location = "/register";
+                
+            }
         } catch (error) {
             if (
                 error.response &&

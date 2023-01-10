@@ -8,12 +8,9 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Navbar from "../../Menubar/Navbar";
 import Sidenav from "../../Menubar/Sidenav";
-import axios from "axios";
 import TextField from '@mui/material/TextField';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { Link, useNavigate, useParams } from "react-router-dom";
-import FormControlLabel from '@mui/material/FormControlLabel';
-import FormGroup from '@mui/material/FormGroup';
 import Switch from '@mui/material/Switch';
 import Swal from "sweetalert2";
 import { getUser, editUser} from "../../../service/api";
@@ -83,13 +80,12 @@ export default function EditData() {
    navigate("/Data-table")
   };
 
-  const handleChange = (e) => {
-  
-    setIsAnswer(e.target.value)
-   console.log(e);
+  const handleChange = (event) => {
+    setIsAnswer(event.target.checked)
+   console.log(event.target.checked);
   }
 
-  const label = { inputProps: { 'aria-label': 'Size switch demo' } };
+
   return (
 
     <>
@@ -134,7 +130,7 @@ export default function EditData() {
                          <TableCell align="left">  <TextField fullWidth onChange={(e) => onValueChange(e)} name='sDescription' id='outlined basic' variant='standard' size='small' value={user.sDescription} sx={{ minWidth:'auto' }}/>  </TableCell>
                            <TableCell align="left">  <TextField fullWidth onChange={(e) => onValueChange(e)} name='text' id='outlined basic' variant='standard' size='small' value={user.sOptions[0].text} sx={{ minWidth:'auto' }}/> </TableCell>
                            <TableCell align="left">  <TextField fullWidth onChange={(e) => onValueChange(e)} name='isPrompt' id='outlined basic' variant='standard' size='small' value={user.sOptions[0].isPrompt} sx={{ minWidth:'auto' }}/>   </TableCell>
-                           <TableCell align="left">     <Switch checked={user.sOptions[0].isAnswer}  onChange={handleChange} name="isAnswer"  {...label} defaultChecked   value={user.sOptions[0].isAnswer} /></TableCell>
+                           <TableCell align="left">    <Switch checked={user.sOptions[0].isAnswer}  onChange={handleChange} name="isAnswer"   value={user.sOptions[0].isAnswer} /> </TableCell>
                           
                            <TableCell align="left"> 
                            <Stack spacing={2} direction="row">
@@ -163,7 +159,7 @@ export default function EditData() {
                           <TableCell align="left"> <TextField fullWidth id='outlined basic' variant='standard' size='small' sx={{ minWidth:'auto' }} >   </TextField></TableCell>
                            <TableCell align="left">  <TextField onChange={(e) => onValueChange(e)} name='text' fullWidth id='outlined basic' variant='standard' size='small' value={user.sOptions[1].text} sx={{ minWidth:'auto' }}/> </TableCell>
                            <TableCell align="left">  <TextField onChange={(e) => onValueChange(e)} name='isPrompt' fullWidth id='outlined basic' variant='standard' size='small' value={user.sOptions[1].isPrompt} sx={{ minWidth:'auto' }}/> </TableCell>
-                           <TableCell align="left">     <Switch checked={user.sOptions[1].isAnswer}   onChange={handleChange} name="isAnswer"  inputProps={{ 'aria-label': 'controlled' }} value={user.sOptions[1].isAnswer} /></TableCell>
+                           <TableCell align="left">     <Switch checked={user.sOptions[1].isAnswer}   onChange={handleChange} name="isAnswer"  value={user.sOptions[1].isAnswer} /></TableCell>
                          </TableRow>
 
                          {/* 3rd option */}
@@ -177,7 +173,7 @@ export default function EditData() {
                           <TableCell align="left"> <TextField fullWidth id='outlined basic' variant='standard' size='small' sx={{ minWidth:'auto' }} >   </TextField></TableCell>
                            <TableCell align="left">  <TextField onChange={(e) => onValueChange(e)} name='text' fullWidth id='outlined basic' variant='standard' size='small' value={user.sOptions[2].text} sx={{ minWidth:'auto' }}/> </TableCell>
                            <TableCell align="left">  <TextField onChange={(e) => onValueChange(e)} name='isPrompt' fullWidth id='outlined basic' variant='standard' size='small' value={user.sOptions[2].isPrompt} sx={{ minWidth:'auto' }}/> </TableCell>
-                           <TableCell align="left">     <Switch checked={user.sOptions[2].isAnswer} onChange={handleChange} name="isAnswer"  inputProps={{ 'aria-label': 'controlled' }} value={user.sOptions[2].isAnswer} /></TableCell>
+                           <TableCell align="left">     <Switch checked={user.sOptions[2].isAnswer} onChange={handleChange} name="isAnswer"   value={user.sOptions[2].isAnswer} /></TableCell>
 
                          </TableRow>
 
@@ -192,7 +188,7 @@ export default function EditData() {
                           <TableCell align="left"> <TextField fullWidth id='outlined basic' variant='standard' size='small' sx={{ minWidth:'auto' }} >   </TextField></TableCell>
                            <TableCell align="left">  <TextField onChange={(e) => onValueChange(e)} name='text' fullWidth id='outlined basic' variant='standard' size='small' value={user.sOptions[3].text} sx={{ minWidth:'auto' }}/> </TableCell>
                            <TableCell align="left">  <TextField onChange={(e) => onValueChange(e)} name='isPrompt' fullWidth id='outlined basic' variant='standard' size='small' value={user.sOptions[3].isPrompt} sx={{ minWidth:'auto' }}/> </TableCell>
-                           <TableCell align="left">     <Switch checked={user.sOptions[3].isAnswer} onChange={handleChange} name="isAnswer"  inputProps={{ 'aria-label': 'controlled' }} value={user.sOptions[3].isAnswer} /></TableCell>
+                           <TableCell align="left">     <Switch checked={user.sOptions[3].isAnswer} onChange={handleChange} name="isAnswer"   value={user.sOptions[3].isAnswer} /></TableCell>
 
                          </TableRow>
 
