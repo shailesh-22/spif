@@ -437,10 +437,9 @@ const Tabs = ({ questions }) => {
                 <div className="tab-body-btns">
                   <button
                     className="btn btn-primary"
-                  // onClick={() => {
-                  //   handleUpdate();
-                  // }
-
+                    onClick={() => {
+                      handleUpdate();
+                    }}
                   >
                     UPDATE
                   </button>
