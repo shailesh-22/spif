@@ -1,11 +1,13 @@
 import { useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "./styles.module.css";
-import swal from "sweetalert";
+import Swal from "sweetalert2";
 
 
 const Login = () => {
+
+    const navigate = useNavigate();
     const [data, setData] = useState({ email: "", password: "" });
     const [error, setError] = useState("");
 
@@ -24,25 +26,25 @@ const Login = () => {
             if (res.is_admin === true)
              {
                 localStorage.setItem("token", JSON.stringify(res));
-                swal({
+                Swal.fire({
                     title: "Done!",
                     text: "Login Successfull !",
                     icon: "success",
                     button: "Ok",
                   });
-                window.location = "/dashboard"; 
-                
+                navigate("/dashboard"); 
+                console.log(res.is_admin)
             } else if(res.is_admin === false) 
             {
                 localStorage.setItem("token", JSON.stringify(res));
-                swal({
+                Swal.fire({
                     title: "Done!",
                     text: "Login Successfull !",
                     icon: "success",
                     button: "Ok",
                   });
-                window.location = "/register";
-                
+                navigate("/register");
+                console.log(res.is_admin)
             }
         } catch (error) {
             if (
@@ -51,7 +53,7 @@ const Login = () => {
                 error.response.status <= 500
             ) {
                 setError(error.response.data.message);
-                swal({
+                Swal.fire({
                     title: "Invalid !",
                     text: "Username or password !",
                     icon: "error",
