@@ -7,7 +7,8 @@ import {
   FormControlLabel,
   Button,
   Box,
-  FormControl
+  FormControl,
+  
 } from '@mui/material';
 import React, { useState } from "react";
 import { useForm, Controller } from "react-hook-form";
@@ -20,8 +21,6 @@ import Stack from "@mui/material/Stack";
 import MenuItem from "@mui/material/MenuItem";
 import InputLabel from "@mui/material/InputLabel";
 import Select from "@mui/material/Select";
-
-
 import FormDialog from './Dialog'
 import Navbar from '../Menubar/Navbar';
 
@@ -47,7 +46,7 @@ const Register = () => {
     profession: Yup.string().required("Profession is required"),
     date_of_birth: Yup.date().required("Date of birth is required"),
     gender:Yup.string().required("gender is required"),
-    number: Yup.number().typeError("number is required").min(10, 'Min value 10.'),
+    number: Yup.number().typeError("phone number is required").min(10, 'Min value 10.'),
     email: Yup.string().required("Email is required").email("Email is invalid"),
     lastName: Yup.string().required("Last name is required"),
     firstName: Yup.string().required("First name is required"),
@@ -59,6 +58,7 @@ const Register = () => {
     control,
     handleSubmit,
     formState: { errors },
+   
   } = useForm({
     resolver: yupResolver(validationSchema),
   });
@@ -69,6 +69,8 @@ const Register = () => {
     setOpen(true);  
      
   };
+
+ 
   const reset = { margin: "20px 5px", background: "#00AD53", color: "white",};
   const submit = { background: "#346BFF", color: "white", margin: "20px 5px" };
 
@@ -121,6 +123,7 @@ const Register = () => {
                 <Typography variant="standard" color="textSecondary">
                   {errors.firstName?.message}
                 </Typography>
+                
               </Grid>
 
               <Grid item xs={12} sm={3}>
@@ -254,8 +257,7 @@ const Register = () => {
                         onChange={(e) => onChange(e.target.value)}
                         
                       />
-                      )}
-                      
+                      )}                      
                     />
                     <Typography variant="inherit" color="textSecondary" style={{marginTop:"0px"}}>
                   {errors.date_of_birth?.message}
@@ -372,6 +374,8 @@ const Register = () => {
                   {...register("country")}
                   error={errors.country ? true : false}
                 />
+
+
                 <Typography variant="standard" color="textSecondary">
                   {errors.country?.message}
                 </Typography>
