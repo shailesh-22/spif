@@ -7,6 +7,7 @@ import {
   FormControlLabel,
   Button,
   Box,
+  FormControl
 } from '@mui/material';
 import React, { useState } from "react";
 import { useForm, Controller } from "react-hook-form";
@@ -19,7 +20,7 @@ import Stack from "@mui/material/Stack";
 import MenuItem from "@mui/material/MenuItem";
 import InputLabel from "@mui/material/InputLabel";
 import Select from "@mui/material/Select";
-import FormControl from "@mui/material/FormControl";
+
 
 import FormDialog from './Dialog'
 import Navbar from '../Menubar/Navbar';
@@ -88,7 +89,7 @@ const Register = () => {
         User Profile Details
       </Typography>
       <Card
-        style={{ maxWidth:1000, margin: "0 auto", padding: "0 auto",backgroundColor:"#DCEEF1"}}
+        style={{ maxWidth:1000, margin: "0 auto", padding: "0 auto"}}
         elevation={10}
       >
         <CardContent>
@@ -110,7 +111,7 @@ const Register = () => {
                   required
                   id="firstName"
                   name="firstName"
-                  label="Full Name"
+                  label="First Name"
                   variant="standard"
                   fullWidth
                   margin="dense"

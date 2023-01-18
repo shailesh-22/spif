@@ -18,6 +18,7 @@ import Signup2 from './components/Signup/Signup2';
 import DataTableTest from './components/pages/Settings/DataTableTest';
 import EditData from './components/pages/Settings/EditData';
 import Sample from './components/pages/Settings/Sample';
+import Register2 from './components/Registration/Register2';
 
 function App() {
 
@@ -37,7 +38,7 @@ function App() {
         <Route path="/" exact element={<Protected><Sidenav/></Protected>}></Route>
         <Route path="/navbar" exact element={<Protected  ><Navbar/></Protected> }></Route>
         <Route path="/dashboard" element={<Protected  > <Dashboard /> </Protected>} />
-      
+        <Route path="/register2" element={<Protected> <Register2 /> </Protected>} />
         <Route path="/register" element={<Protected> <Register /> </Protected>} />
         <Route path="/terms_conditions" element={<Protected>  <TermsConditions/> </Protected>} />
         <Route path="/assessment-test" element={<Protected> <AssessmentTest/> </Protected>} />
