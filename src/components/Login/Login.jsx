@@ -26,25 +26,25 @@ const Login = () => {
             if (res.is_admin === true)
              {
                 localStorage.setItem("token", JSON.stringify(res));
-                Swal.fire({
-                    title: "Done!",
-                    text: "Login Successfull !",
-                    icon: "success",
-                    button: "Ok",
-                  });
+                // Swal.fire({
+                //     title: "Done!",
+                //     text: "Login Successfull !",
+                //     icon: "success",
+                //     button: "Ok",
+                //   });
                 navigate("/dashboard"); 
                 console.log(res.is_admin)
             } else if(res.is_admin === false) 
             {
                 localStorage.setItem("token", JSON.stringify(res));
-                Swal.fire({
-                    title: "Done!",
-                    text: "Login Successfull !",
-                    icon: "success",
-                    button: "Ok",
-                  });
-                navigate("/register");
-                console.log(res.is_admin)
+                // Swal.fire({
+                //     title: "Done!",
+                //     text: "Login Successfull !",
+                //     icon: "success",
+                //     button: "Ok",
+                //   });
+                navigate("/register2");
+             
             }
         } catch (error) {
             if (

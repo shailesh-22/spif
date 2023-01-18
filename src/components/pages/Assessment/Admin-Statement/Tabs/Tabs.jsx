@@ -16,7 +16,6 @@ import { Switch, FormControlLabel } from '@mui/material'
 import swal from "sweetalert";
 
 
-
 const Tabs = ({ questions }) => {
 
 
