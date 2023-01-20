@@ -6,7 +6,7 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import { TextField } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import swal from "sweetalert";
+import Swal from "sweetalert2";
 import './dialog.css'
 
 
@@ -16,14 +16,52 @@ export default function AlertDialog({open,handleClose}) {
 
   const hamdleUpdate = ()=> {
     
-    swal({
-      title: "Done!",
-      text: "Profile created successfully!",
-      icon: "success",
-      button: "Ok",
-    });
-    navigate('/terms_conditions')
-  
+    // swal("Thank you for filling in your personal details. Would you like to take the Assesement?", {
+    //   buttons: {
+    //     cancel: "Later",
+    //     ready : "Now"
+    //   },
+    // })
+    // .then((value) => {
+    //   switch (value) {
+     
+    //     case "ready":
+    //       navigate("/terms_conditions");
+    //       break;
+     
+    //     default:
+    //       navigate("/");
+    //       localStorage.removeItem("token")
+    //   }
+    // });
+  handleClose();
+    Swal.fire({
+      title: 'Thank you for filling in your personal details!',
+      text: "Would you like to take the Assesement?",
+      icon: 'question',
+      showCancelButton: true,
+      cancelButtonColor: '#d33', 
+      confirmButtonColor: '#3085d6',
+      
+      cancelButtonText: 'Later',
+      confirmButtonText: 'Now'
+      
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          'Created!',
+          'Your Profile has been Created.',
+          'success'
+        )
+        &&
+        navigate("/terms_conditions")
+      }
+      else{
+        navigate("/");
+       localStorage.removeItem("token")
+      }
+    })
+   
   }
   return (
     <div>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Box, Card, Typography } from '@mui/material'
 import FormDialog from './Dialog'
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import Navbar from '../Menubar/Navbar';
 import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup"
@@ -15,7 +15,7 @@ const Register2 = () => {
     setOpen(false);
   };
 
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const validationSchema = Yup.object().shape({
     lastName: Yup.string().required("Last Name is required"),
@@ -25,9 +25,9 @@ const Register2 = () => {
     state: Yup.string().required("State name is required"),
     country: Yup.string().required("Country name is required"),
     zip: Yup.number().typeError("Zip code is required"),
-    profession: Yup.string().required("Profession is required"),
+    profession: Yup.string().required("Please Select"),
     date_of_birth: Yup.date().required("Date of birth is required"),
-    gender: Yup.string().required("Gender is required"),
+    gender: Yup.string().required("Please Select"),
     number: Yup.number().typeError("Phone Number is required").min(10, 'Min value 10.').required("Required"),
     email: Yup.string().required("Email is required").email("Email is invalid")
   })
