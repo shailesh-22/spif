@@ -14,9 +14,9 @@ const Login2 = () => {
            
             
 
-            <div className="col-md-6 col-lg-7 d-flex align-items-center">
-              <div className="card-body p-4 p-lg-5 text-black ">
-                <form>
+            <div className="col-md-6 col-lg-7 d-flex align-items-center" >
+              <div className="card-body p-4 p-lg-5 text-black" >
+                <form >
                   <div className="d-flex justify-content-center align-items-center mb-3 pb-1">
                     
                     <span className="d-flex justify-content-center h1 fw-bold mb-0">
@@ -41,8 +41,8 @@ const Login2 = () => {
                 </form> 
               </div>
             </div>
-            <div className="col-md-6 col-lg-5 d-none d-md-block " style={{backgroundColor:"#00d084",}}  >
-              <img src="https://www.spif.in/wp-content/uploads/2021/09/mains.jpg" alt="login form"  className="img-fluid" style={{borderRadius: '1rem 0 0 1rem',  width:"500px", marginTop:"150px"}} />   
+            <div className="col-md-6 col-lg-5 d-none d-md-block " style={{backgroundColor:"#00d084"}}  >
+              <img src="https://www.spif.in/wp-content/uploads/2021/09/mains.jpg" alt="login form"  className="img-fluid" style={{borderRadius: '1rem 0 0 1rem', marginTop:"150px"}} />   
             </div>
 
           </div>
