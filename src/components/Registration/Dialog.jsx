@@ -48,12 +48,12 @@ export default function AlertDialog({open,handleClose}) {
       
     }).then((result) => {
       if (result.isConfirmed) {
-        Swal.fire(
-          'Created!',
-          'Your Profile has been Created.',
-          'success'
-        )
-        &&
+        // Swal.fire(
+        //   'Created!',
+        //   'Your Profile has been Created.',
+        //   'success'
+        // )
+        // &&
         navigate("/terms_conditions")
       }
       else{
