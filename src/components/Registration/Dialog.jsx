@@ -38,7 +38,7 @@ export default function AlertDialog({open,handleClose}) {
     Swal.fire({
       title: 'Thank you for filling in your personal details!',
       text: "Would you like to take the Assesement?",
-      icon: 'question',
+      icon: 'success',
       showCancelButton: true,
       cancelButtonColor: '#d33', 
       confirmButtonColor: '#3085d6',
@@ -56,10 +56,10 @@ export default function AlertDialog({open,handleClose}) {
         // &&
         navigate("/terms_conditions")
       }
-      else{
-        navigate("/");
-       localStorage.removeItem("token")
-      }
+      // else{
+      //   navigate("/");
+      //  localStorage.removeItem("token")
+      // }
     })
    
   }

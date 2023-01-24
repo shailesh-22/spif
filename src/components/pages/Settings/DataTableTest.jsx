@@ -170,7 +170,7 @@ const navigate = useNavigate();
                       <TextField {...params} label="Statements" />
                     )}
                   />
-                   <Box   m={1}  >
+                   <Box   m={1} >
                   <Button variant="contained" onClick={handleOpen}>
                   Add Slide
                   </Button>

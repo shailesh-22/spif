@@ -19,6 +19,7 @@ import DataTableTest from './components/pages/Settings/DataTableTest';
 import EditData from './components/pages/Settings/EditData';
 import Sample from './components/pages/Settings/Sample';
 import Register2 from './components/Registration/Register2';
+import UpdateData from './components/pages/Settings/UpdateData';
 
 function App() {
 
@@ -34,7 +35,7 @@ function App() {
       <Route path="/login2" exact element={ <Login2/> }></Route>
       <Route path="/signup2" exact element={ <Signup2/> }></Route>
       <Route path="/signup" exact element={ <Signup/> }></Route>
-      <Route path="/Data-table" exact element={<Protected> <DataTableTest /> </Protected>  }></Route>
+      <Route path="/Data-table" exact element={ <DataTableTest />   }></Route>
         <Route path="/" exact element={<Protected><Sidenav/></Protected>}></Route>
         <Route path="/navbar" exact element={<Protected  ><Navbar/></Protected> }></Route>
         <Route path="/dashboard" element={<Protected  > <Dashboard /> </Protected>} />
@@ -45,7 +46,8 @@ function App() {
         <Route path="/test-result" element={<Protected>  <TestResult/> </Protected>} />
         <Route path="/certification-page" element={<Protected>  <CertificationPage/> </Protected>} />
         <Route path="/admin-statement" element={<Protected> <AdminStatement/> </Protected>} />
-        <Route path="/edit-data/:sStatementID" element={<Protected> <EditData/> </Protected>} />
+        <Route path="/edit-data/:sStatementID" element={ <EditData/> } />
+        <Route path="/updatedata/:sStatementID" element={ <UpdateData/>} />
       </Routes>
       </BrowserRouter>   
     </div>

@@ -22,36 +22,11 @@ const initialValues = {
       "text": "",
       "value": "",
       "isPrompt": ""   
-    },
-    {
-      "text": "",
-      "value": "",
-      "isPrompt": ""   
-    },
-    {
-      "text": "",
-      "value": "",
-      "isPrompt": ""   
-    },
-    {
-      "text": "",
-      "value": "",
-      "isPrompt": ""   
-    },
-    {
-      "text": "",
-      "value": "",
-      "isPrompt": ""   
-    },
-     {
-      "text": "",
-      "value": "",
-      "isPrompt": ""   
     }
   ]
 }
 
-export default function EditData() {
+export default function UpdateData() {
 
   const [user, setUser] = useState(initialValues);
   const navigate = useNavigate();
@@ -70,7 +45,7 @@ export default function EditData() {
   
      const onValueChange = (e) => {
       setUser({ ...user, [e.target.name]: e.target.value})
-      console.log(user);
+      console.log();
      }
   
   
@@ -101,44 +76,15 @@ export default function EditData() {
           </Typography> 
  
            <Paper sx={{ width: "100%", overflow: "hidden" }}>
-             <TableContainer >
+             <TableContainer sx={{ maxHeight: 440 }}>
                <Table stickyHeader aria-label="sticky table">
-
-              <TableHead>
-                <TableRow>
-                <TableCell align="left">Questions</TableCell>
-                </TableRow>
-              </TableHead>
-
-           <TableBody>
-             <TableRow
-                hover
-                role="checkbox"
-                tabIndex={-1}
-                >
-                          <TableCell align="left">  <TextField fullWidth onChange={(e) => onValueChange(e)} name='sDescription' id='outlined basic' variant='standard' size='small' value={user.sDescription} sx={{ minWidth:'auto' }}/>  </TableCell>
-
-             </TableRow>
-
-            </TableBody>
-
-             </Table>
-
-             <Table stickyHeader aria-label="sticky table">
-             
-
                  <TableHead>
                   {/* <TableHead style={{display:'flex', alignItems:'center'}}>Update Statement</TableHead> */}
-
-
                   
                    <TableRow>
                    
                      {/* <TableCell align="left">Q.No</TableCell> */}
-                    
-                     <TableCell align="left"> Options</TableCell>
-                     <TableCell align="left"> Prompt</TableCell>
-                     <TableCell align="left"> Answer</TableCell>
+                     <TableCell align="left">Questions</TableCell>
                      
                 
                    </TableRow>
@@ -153,10 +99,11 @@ export default function EditData() {
                            
                          >
                          
-                           <TableCell align="left">  <TextField fullWidth onChange={(e) => onValueChange(e)} name='text' id='outlined basic' variant='standard' size='small' value={user.sOptions[0].text} sx={{ minWidth:'auto' }}/> </TableCell>
+                         <TableCell align="left">  <TextField fullWidth onChange={(e) => onValueChange(e)} name='sDescription' id='outlined basic' variant='standard' size='small' value={user.sDescription} sx={{ minWidth:'auto' }}/>  </TableCell>
+                           {/* <TableCell align="left">  <TextField fullWidth onChange={(e) => onValueChange(e)} name='text' id='outlined basic' variant='standard' size='small' value={user.sOptions[0].text} sx={{ minWidth:'auto' }}/> </TableCell>
                            <TableCell align="left">  <TextField fullWidth onChange={(e) => onValueChange(e)} name='isPrompt' id='outlined basic' variant='standard' size='small' value={user.sOptions[0].isPrompt} sx={{ minWidth:'auto' }}/>   </TableCell>
                            <TableCell align="left">    <Switch checked={user.sOptions[0].isAnswer}  onChange={handleChange} name="isAnswer"   value={user.sOptions[0].isAnswer} /> </TableCell>
-                          
+                           */}
                            {/* <TableCell align="left"> 
                            <Stack spacing={2} direction="row">
                             <Button
@@ -170,10 +117,38 @@ export default function EditData() {
                             </TableCell> */}
                             
                    </TableRow>
+
+                   <TableHead>
+
+                   <TableCell align="left"> Options</TableCell>
+                     <TableCell align="left"> Prompt</TableCell>
+                     <TableCell align="left"> Answer</TableCell>
+                     <TableCell align="left">Actions</TableCell>
+                    
+                   </TableHead>
+
+                   <TableBody>
+                    <TableCell>
+                    <TextField fullWidth onChange={(e) => onValueChange(e)} name='text' id='outlined basic'
+                    //  value={  
+                    //     array.forEach(( user.sOptions, i) => 
+                          
+                         
+                    //       sOptions[i].text[0]
+                         
+                          
+                    //     );
+
+                    //  } 
+                     variant='standard' size='small' sx={{ minWidth:'auto' }}/> <TextField fullWidth onChange={(e) => onValueChange(e)} name='text' id='outlined basic' variant='standard' size='small'  sx={{ minWidth:'auto' }}/> 
+                    </TableCell>
+
+                   </TableBody>
+
                  
                    {/* 2nd option */}
 
-                        <TableRow
+                        {/* <TableRow
                            hover
                            role="checkbox"
                            tabIndex={-1}
@@ -181,41 +156,41 @@ export default function EditData() {
 
                            
                          >
-                     
+                          <TableCell align="left"> <TextField fullWidth id='outlined basic' variant='standard' size='small' sx={{ minWidth:'auto' }} >   </TextField></TableCell>
                            <TableCell align="left">  <TextField onChange={(e) => onValueChange(e)} name='text' fullWidth id='outlined basic' variant='standard' size='small' value={user.sOptions[1].text} sx={{ minWidth:'auto' }}/> </TableCell>
                            <TableCell align="left">  <TextField onChange={(e) => onValueChange(e)} name='isPrompt' fullWidth id='outlined basic' variant='standard' size='small' value={user.sOptions[1].isPrompt} sx={{ minWidth:'auto' }}/> </TableCell>
                            <TableCell align="left">     <Switch checked={user.sOptions[1].isAnswer}   onChange={handleChange} name="isAnswer"  value={user.sOptions[1].isAnswer} /></TableCell>
-                         </TableRow>
+                         </TableRow> */}
 
                          {/* 3rd option */}
 
-                         <TableRow
+                         {/* <TableRow
                            hover
                            role="checkbox"
                            tabIndex={-1}
                            
                          >
-                       
+                          <TableCell align="left"> <TextField fullWidth id='outlined basic' variant='standard' size='small' sx={{ minWidth:'auto' }} >   </TextField></TableCell>
                            <TableCell align="left">  <TextField onChange={(e) => onValueChange(e)} name='text' fullWidth id='outlined basic' variant='standard' size='small' value={user.sOptions[2].text} sx={{ minWidth:'auto' }}/> </TableCell>
                            <TableCell align="left">  <TextField onChange={(e) => onValueChange(e)} name='isPrompt' fullWidth id='outlined basic' variant='standard' size='small' value={user.sOptions[2].isPrompt} sx={{ minWidth:'auto' }}/> </TableCell>
                            <TableCell align="left">     <Switch checked={user.sOptions[2].isAnswer} onChange={handleChange} name="isAnswer"   value={user.sOptions[2].isAnswer} /></TableCell>
 
-                         </TableRow>
+                         </TableRow> */}
 
                          {/* 4th option */}
 
-                         <TableRow
+                         {/* <TableRow
                            hover
                            role="checkbox"
                            tabIndex={-1}
                            
                          >
-                        
+                          <TableCell align="left"> <TextField fullWidth id='outlined basic' variant='standard' size='small' sx={{ minWidth:'auto' }} >   </TextField></TableCell>
                            <TableCell align="left">  <TextField onChange={(e) => onValueChange(e)} name='text' fullWidth id='outlined basic' variant='standard' size='small' value={user.sOptions[3].text} sx={{ minWidth:'auto' }}/> </TableCell>
                            <TableCell align="left">  <TextField onChange={(e) => onValueChange(e)} name='isPrompt' fullWidth id='outlined basic' variant='standard' size='small' value={user.sOptions[3].isPrompt} sx={{ minWidth:'auto' }}/> </TableCell>
-                           <TableCell align="left">     <Switch checked={user.sOptions[3].isAnswer} onChange={handleChange} name="isAnswer"   value={user.sOptions[3].isAnswer} /></TableCell>
+                           <TableCell align="left">     <Switch checked={user.sOptions[3].isAnswer} onChange={handleChange} name="isAnswer"   value={user.sOptions[3].isAnswer} /></TableCell> */}
 
-                         </TableRow>
+                         {/* </TableRow> */}
 
                             {/* 5th option */}
 {/* 
@@ -249,26 +224,18 @@ export default function EditData() {
                          
 
                    
-               
-                 
-
-
+                
+                 <Link to="/Data-table">  <Button variant="contained" align="center"  ><ArrowBackIcon /> </Button></Link>
+                   
                  </TableBody>
                  
-                
+
                </Table> 
              </TableContainer>
-         <Box padding={1} style={{ display:"flex", justifyContent:"space-around" }}>
-             <Link to="/Data-table">  <Button variant="contained" align="center" ><ArrowBackIcon /> </Button></Link>
-
-             <Button  variant="contained" color="success" onClick={()=>{ handleSubmit()}} >Update</Button>
-             </Box>
+             
            </Paper>
-         
          </Box>
-        
        </Box>
-       
      </div>
   
    
