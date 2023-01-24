@@ -25,9 +25,9 @@ const Register2 = () => {
     state: Yup.string().required("State name is required"),
     country: Yup.string().required("Country name is required"),
     zip: Yup.number().typeError("Zip code is required"),
-    profession: Yup.string().required("Please Select"),
+    profession: Yup.string().required("Please Select Profession"),
     date_of_birth: Yup.date().required("Date of birth is required"),
-    gender: Yup.string().required("Please Select"),
+    gender: Yup.string().required("Please Select Gender"),
     number: Yup.number().typeError("Phone Number is required").min(10, 'Min value 10.').required("Required"),
     email: Yup.string().required("Email is required").email("Email is invalid")
   })

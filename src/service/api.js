@@ -20,7 +20,7 @@ export const getUsers = async () => {
       
 }
 
-export const getUser = async (data) => {
+export const getUser = async (data,i) => {
     try{
        return axios.get(`${API_URL}${data}/`)
     } catch (error) {
