@@ -24,7 +24,7 @@ const initialValues = {
       "isAnswer": "",
       "isPrompt": ""
     }
-     ]
+  ]
 }
 
 export default function EditData() {
@@ -65,14 +65,14 @@ export default function EditData() {
   return (
 
     <>
-+
+
       <div className="bgcolor">
         <Navbar />
         <Box height={70} />
         <Box sx={{ display: "flex" }}>
           <Sidenav />
           <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-            <Typography variant='h5' align="center" >
+            <Typography variant='h5' align="center" style={{ marginBottom: "5px", marginTop: "0px" }} >
               Update Statement
             </Typography>
 
@@ -106,16 +106,13 @@ export default function EditData() {
                   <TableHead>
                     {/* <TableHead style={{display:'flex', alignItems:'center'}}>Update Statement</TableHead> */}
 
-
-
                     <TableRow>
 
                       {/* <TableCell align="left">Q.No</TableCell> */}
-                      <TableCell align="center" style={{ width : "60px" }}>No </TableCell>
+                      <TableCell align="center" style={{ width: "60px" }}>No </TableCell>
                       <TableCell align="center"> Options</TableCell>
                       <TableCell align="center"> Prompt</TableCell>
                       <TableCell align="center"> Answer</TableCell>
-
 
                     </TableRow>
                   </TableHead>
@@ -125,21 +122,18 @@ export default function EditData() {
 
                         <TableBody>
 
-
                           <TableRow
                             hover
                             role="checkbox"
                             tabIndex={-1}
 
                           >
-                            <TableCell align="center"> {i+1} </TableCell>
+                            <TableCell align="center"> {i + 1} </TableCell>
                             <TableCell align="center">  <TextField fullWidth onChange={(e) => onValueChange(e)} name='text' id='outlined basic' variant='standard' size='small' value={option.text} sx={{ minWidth: 'auto' }} /> </TableCell>
-                            <TableCell align="center">  <TextField  fullWidth onChange={(e) => onValueChange(e)} name='isPrompt' id='outlined basic' variant='standard' size='small' value={option.isPrompt} sx={{ minWidth:'auto' }}/>   </TableCell> 
-                            <TableCell align="center">    <Switch checked={option.isAnswer}  onChange={handleChange} name="isAnswer"   value={option.isAnswer} /> </TableCell> 
+                            <TableCell align="center">  <TextField fullWidth onChange={(e) => onValueChange(e)} name='isPrompt' id='outlined basic' variant='standard' size='small' value={option.isPrompt} sx={{ minWidth: 'auto' }} />   </TableCell>
+                            <TableCell align="center">    <Switch checked={option.isAnswer} onChange={handleChange} name="isAnswer" value={option.isAnswer} /> </TableCell>
 
-          
-
-                          </TableRow>              
+                          </TableRow>
 
                         </TableBody>
 
@@ -148,7 +142,7 @@ export default function EditData() {
                   })}
                 </Table>
               </TableContainer>
-              
+
               <Box padding={1} style={{ display: "flex", justifyContent: "space-around" }}>
                 <Link to="/Data-table">  <Button variant="contained" align="center" ><ArrowBackIcon /> </Button></Link>
 

@@ -8,7 +8,7 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TextField from '@mui/material/TextField';
 import TableRow from "@mui/material/TableRow";
-import { addUser } from '../../../service/api';
+import { addUser, getUser } from '../../../service/api';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
@@ -41,7 +41,7 @@ export default function AddData({ CloseEvent }) {
     await addUser(user)
     CloseEvent()
     Swal.fire("Added!", "Statement has been added.", "success")
-
+    window.location.reload();
   };
 
 
@@ -108,8 +108,8 @@ export default function AddData({ CloseEvent }) {
 
               >
                 <TableCell align="left">  <TextField onChange={(e) => onValueChange(e)} name='text' id='outlined basic' variant='standard' size='small' sx={{ minWidth: 'auto' }} />  </TableCell>
-                <TableCell align="left">  <TextField  onChange={(e) => onValueChange(e)} name='isPrompt' id='outlined basic' variant='standard' size='small' sx={{ minWidth: 'auto' }} />    </TableCell>
-                <TableCell align="left">   <Switch   onChange={(e) => onValueChange(e)} name="isAnswer"   />   </TableCell>
+                <TableCell align="left">  <TextField onChange={(e) => onValueChange(e)} name='isPrompt' id='outlined basic' variant='standard' size='small' sx={{ minWidth: 'auto' }} />    </TableCell>
+                <TableCell align="left">   <Switch onChange={(e) => onValueChange(e)} name="isAnswer" />   </TableCell>
 
                 <TableCell align="left">
 
@@ -134,7 +134,7 @@ export default function AddData({ CloseEvent }) {
       </Paper>
 
       <Button
-      style={{ marginLeft:"620px" , marginTop:"20px" }}
+        style={{ marginLeft: "620px", marginTop: "20px" }}
         variant="contained" color="success"
         onClick={() => { addUserDetails() }}
       >

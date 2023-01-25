@@ -75,9 +75,11 @@ export default function UpdateData() {
 
           <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
 
-            <Typography variant='h5' align="center" >
-              Update Statement
-            </Typography>
+            <Box style={{ paddingBottom: "5px" }}>
+              <Typography variant='h5' align="center" >
+                Update Statement
+              </Typography>
+            </Box>
 
             <Paper sx={{ width: "100%", overflow: "hidden" }}>
               <TableContainer >
@@ -104,7 +106,7 @@ export default function UpdateData() {
                     >
 
                       <TableCell align="left">  <TextField fullWidth onChange={(e) => onValueChange(e)} name='sDescription' id='outlined basic' variant='standard' size='small' value={user.sDescription} sx={{ minWidth: 'auto' }} />  </TableCell>
-      
+
 
                     </TableRow>
 
@@ -113,31 +115,31 @@ export default function UpdateData() {
                       <TableCell align="left"> Options</TableCell>
                       <TableCell align="left"> Prompt</TableCell>
                       <TableCell align="left"> Answer</TableCell>
-                    
+
 
                     </TableHead>
-                    
-                    {user && user.sOptions.map((option,i) => {
-                      return(
-                      <>
-                      <TableBody>
-                      <TableRow
-                           hover
-                           role="checkbox"
-                           tabIndex={-1}
-                           
-                         >
-                        <TableCell>
-                          <TextField fullWidth onChange={(e) => onValueChange(e)} name='text' id='outlined basic'
-                            value={option.text}
-                            variant='standard' size='small' sx={{ minWidth: 'auto'  }} />
-                        </TableCell>
 
-                        <TableCell align="left">  <TextField onChange={(e) => onValueChange(e)} name='isPrompt' fullWidth id='outlined basic' variant='standard' size='small' value={option.isPrompt} sx={{ minWidth:'auto' }}/> </TableCell>
-                        <TableCell align="left">     <Switch checked={option.isAnswer}   onChange={handleChange} name="isAnswer"  value={option.isAnswer} /></TableCell>
-                        </TableRow>
-                      </TableBody>
-                      </>
+                    {user && user.sOptions.map((option, i) => {
+                      return (
+                        <>
+                          <TableBody>
+                            <TableRow
+                              hover
+                              role="checkbox"
+                              tabIndex={-1}
+
+                            >
+                              <TableCell>
+                                <TextField fullWidth onChange={(e) => onValueChange(e)} name='text' id='outlined basic'
+                                  value={option.text}
+                                  variant='standard' size='small' sx={{ minWidth: 'auto' }} />
+                              </TableCell>
+
+                              <TableCell align="left">  <TextField onChange={(e) => onValueChange(e)} name='isPrompt' fullWidth id='outlined basic' variant='standard' size='small' value={option.isPrompt} sx={{ minWidth: 'auto' }} /> </TableCell>
+                              <TableCell align="left">     <Switch checked={option.isAnswer} onChange={handleChange} name="isAnswer" value={option.isAnswer} /></TableCell>
+                            </TableRow>
+                          </TableBody>
+                        </>
                       )
                     })}
 
@@ -146,7 +148,7 @@ export default function UpdateData() {
 
                 </Table>
               </TableContainer>
-              <hr/>
+              <hr />
               <Box padding={1} style={{ display: "flex", justifyContent: "space-around" }}>
                 <Link to="/Data-table">  <Button variant="contained" align="center" ><ArrowBackIcon /> </Button></Link>
 
