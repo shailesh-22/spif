@@ -121,6 +121,7 @@ let deleteApi = async () => {
     ) 
     getUsersDetails(); 
     localStorage.removeItem("deleteMe");
+    window.location.reload();
   
 };
 
