@@ -29,7 +29,6 @@ function App() {
     <div>
       <BrowserRouter>
       <Routes>
-    
       <Route exact path="/"  element={  <Login/> }></Route>
       <Route exact path="/sample"  element={ <Sample /> }></Route>
       <Route path="/login2" exact element={ <Login2/> }></Route>
