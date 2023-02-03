@@ -233,7 +233,7 @@ const Tabs = ({ questions }) => {
                       border: "1px solid rgba(55, 59, 59, 0.2)",
                       borderRadius: "5px",
                     }}
-
+                    
                   />
                 </div>
                 <hr />

@@ -7,9 +7,12 @@ import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup"
 import * as Yup from "yup";
 
+
 const Register2 = () => {
 
   const [open, setOpen] = useState(false);
+  const [resetButton, setResetButton] = useState('Reset');
+  const [registerButton, setRegisterButton] = useState('Register');
 
   const handleClose = () => {
     setOpen(false);
@@ -54,8 +57,9 @@ const Register2 = () => {
   const onSubmit = (data) => {
 
     console.log(JSON.stringify(data, null, 2));
-    setOpen(true);  
-     
+    setOpen(true);
+    setResetButton('Edit')
+    setRegisterButton('Assesement')
   };
 
   return (
@@ -341,8 +345,8 @@ const Register2 = () => {
   </div> */}
 
                 <div className="col-12 " >
-                  <button className="btn btn-primary mx-2" type="reset" value="reset"  >Reset</button>
-                  <button className="btn btn-primary " type="submit" value="submit"  onClick={handleSubmit(onSubmit)}>Register</button>
+                  <button className="btn btn-primary mx-2" type="reset" value="reset"  >{resetButton }</button>
+                  <button className="btn btn-primary " type="submit" value="submit"  onClick={handleSubmit(onSubmit)}>{ registerButton }</button>
                 </div>
               </div>
 
