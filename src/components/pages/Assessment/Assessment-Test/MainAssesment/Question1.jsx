@@ -153,11 +153,12 @@ const Question1 = ({ questions, loading, questionPerPage, currentPage, setCurren
 
 
                             {/* When user click the wrong Answer(input)-->The Popup will display */}
-
+                   
                             <Popper
                               open={open}
                               anchorEl={anchor}
-                              className='popper'                              
+                              className='popper'  
+                                                         
                             >
                               <div className='option-popper-title'>
                                 <Typography >  The Reason for wrong answer </Typography>
@@ -174,6 +175,7 @@ const Question1 = ({ questions, loading, questionPerPage, currentPage, setCurren
                               </div>
 
                             </Popper>
+                        
                           </div>
                         )
                       })

@@ -8,58 +8,37 @@ import { TextField } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import Swal from "sweetalert2";
 import './dialog.css'
+import { useState } from 'react';
+import Register2 from './Register2';
 
 
 export default function AlertDialog({open,handleClose}) {
 
   let navigate = useNavigate();
 
+  const [resetButton, setResetButton] = useState('Reset');
+
   const hamdleUpdate = ()=> {
-    
-    // swal("Thank you for filling in your personal details. Would you like to take the Assesement?", {
-    //   buttons: {
-    //     cancel: "Later",
-    //     ready : "Now"
-    //   },
-    // })
-    // .then((value) => {
-    //   switch (value) {
-     
-    //     case "ready":
-    //       navigate("/terms_conditions");
-    //       break;
-     
-    //     default:
-    //       navigate("/");
-    //       localStorage.removeItem("token")
-    //   }
-    // });
+
   handleClose();
+
     Swal.fire({
       title: 'Thank you for filling in your personal details!',
       text: "Would you like to take the Assesement?",
       icon: 'success',
       showCancelButton: true,
-      cancelButtonColor: '#d33', 
-      confirmButtonColor: '#3085d6',
-      
       cancelButtonText: 'Later',
-      confirmButtonText: 'Now'
-      
+      confirmButtonText: 'Now',
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33', 
+      reverseButtons: true
     }).then((result) => {
       if (result.isConfirmed) {
-        // Swal.fire(
-        //   'Created!',
-        //   'Your Profile has been Created.',
-        //   'success'
-        // )
-        // &&
         navigate("/terms_conditions")
       }
-      // else{
-      //   navigate("/");
-      //  localStorage.removeItem("token")
-      // }
+      else{
+        setResetButton('Edit')
+      }
     })
    
   }
@@ -88,7 +67,9 @@ export default function AlertDialog({open,handleClose}) {
             Validate
           </Button>
         </DialogActions>
+     <Button resetButton={resetButton} />
       </Dialog>
+      
     </div>
   );
 }

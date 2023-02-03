@@ -19,19 +19,17 @@ const initialValues = {
   sDescription: '',
   sOptions: [
     {
-      "text": "",
-      "value": "",
-      "isPrompt": ""
     }
   ]
 }
 
 export default function UpdateData() {
+  
 
   const [user, setUser] = useState(initialValues);
   const navigate = useNavigate();
   const { sStatementID } = useParams();
-  const [isAnswer, setIsAnswer] = useState(false);
+  const [isAnswer, setIsAnswer] = useState();
 
 
 
@@ -46,7 +44,7 @@ export default function UpdateData() {
 
   const onValueChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value })
-
+console.log(e.target);
   }
 
 
@@ -54,10 +52,12 @@ export default function UpdateData() {
     await editUser(user, sStatementID)
     Swal.fire("Updated !", "Statement has been Updated.", "success")
     navigate("/Data-table")
+    console.log(user);
   };
 
   const handleChange = (event) => {
     setIsAnswer(event.target.checked)
+
     console.log(event.target.checked);
   }
 
