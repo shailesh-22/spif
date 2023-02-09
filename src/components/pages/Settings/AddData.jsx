@@ -113,10 +113,6 @@ export default function AddData({ CloseEvent }) {
 
                 <TableCell align="left">
 
-
-
-
-
                 </TableCell>
 
               </TableRow>
@@ -128,8 +124,6 @@ export default function AddData({ CloseEvent }) {
 
           </Table>
         </TableContainer>
-
-
 
       </Paper>
 

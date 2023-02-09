@@ -17,10 +17,7 @@ import { getUser, editUser } from "../../../service/api";
 
 const initialValues = {
   sDescription: '',
-  sOptions: [
-    {
-    }
-  ]
+  sOptions: [],
 }
 
 export default function UpdateData() {
@@ -44,7 +41,7 @@ export default function UpdateData() {
 
   const onValueChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value })
-console.log(e.target);
+
   }
 
 
@@ -52,13 +49,12 @@ console.log(e.target);
     await editUser(user, sStatementID)
     Swal.fire("Updated !", "Statement has been Updated.", "success")
     navigate("/Data-table")
-    console.log(user);
+   
   };
 
   const handleChange = (event) => {
     setIsAnswer(event.target.checked)
 
-    console.log(event.target.checked);
   }
 
 
@@ -71,7 +67,6 @@ console.log(e.target);
         <Box height={70} />
         <Box sx={{ display: "flex" }}>
           <Sidenav />
-
 
           <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
 
@@ -92,11 +87,9 @@ console.log(e.target);
                       {/* <TableCell align="left">Q.No</TableCell> */}
                       <TableCell align="left">Questions</TableCell>
 
-
                     </TableRow>
                   </TableHead>
                   <TableBody>
-
 
                     <TableRow
                       hover
@@ -115,7 +108,6 @@ console.log(e.target);
                       <TableCell align="left"> Options</TableCell>
                       <TableCell align="left"> Prompt</TableCell>
                       <TableCell align="left"> Answer</TableCell>
-
 
                     </TableHead>
 
@@ -136,7 +128,7 @@ console.log(e.target);
                               </TableCell>
 
                               <TableCell align="left">  <TextField onChange={(e) => onValueChange(e)} name='isPrompt' fullWidth id='outlined basic' variant='standard' size='small' value={option.isPrompt} sx={{ minWidth: 'auto' }} /> </TableCell>
-                              <TableCell align="left">     <Switch checked={option.isAnswer} onChange={handleChange} name="isAnswer" value={option.isAnswer} /></TableCell>
+                              <TableCell align="left">  <Switch  onChange={(e) => handleChange(e)} name="isAnswer" value={option.isAnswer} /> </TableCell>
                             </TableRow>
                           </TableBody>
                         </>
