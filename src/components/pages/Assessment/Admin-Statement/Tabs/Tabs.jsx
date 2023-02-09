@@ -18,8 +18,7 @@ import swal from "sweetalert";
 
 const Tabs = ({ questions }) => {
 
-
-
+  
   // const api_url = `http://localhost:3004/questions/`;
 
   // const deleteQuestion = async (id) => {

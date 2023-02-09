@@ -20,8 +20,6 @@ const Login = () => {
         try {
             const url = "http://103.160.153.38:8020/accounts/auth/";
 
-          
-            
             const { data: res } = await axios.post(url, data);
             if (res.is_admin === true)
              {

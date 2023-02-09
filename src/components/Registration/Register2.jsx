@@ -35,8 +35,6 @@ const Register2 = () => {
     email: Yup.string().required("Email is required").email("Email is invalid")
   })
 
-
-
   const {
     register,
     control,
@@ -61,6 +59,7 @@ const Register2 = () => {
     setResetButton('Edit')
     setRegisterButton('Assesement')
   };
+
 
   return (
     <div class="container">

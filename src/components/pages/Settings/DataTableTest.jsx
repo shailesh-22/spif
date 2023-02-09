@@ -18,7 +18,7 @@ import Swal from 'sweetalert2'
 import {  useNavigate } from "react-router-dom";
 import Modal from '@mui/material/Modal';
 import AddData from "./AddData";
-import { getUsers } from "../../../service/api";
+import { getUsers, eDELETEUser } from "../../../service/api";
 
 const style = {
   position: 'absolute',
@@ -98,11 +98,13 @@ const deleteUser = (id) => {
     showCancelButton: true,
     confirmButtonColor: '#3085d6',
     cancelButtonColor: '#d33',
-    confirmButtonText: 'Yes, delete it!'
+    confirmButtonText: 'Yes, delete it!',
+    reverseButtons: true
   }).then((result) => {
     if (result.value) {
+      
       deleteApi()
-      // window.location.reload()
+      window.location.reload()
     }
   })
 }
@@ -121,7 +123,7 @@ let deleteApi = async () => {
     ) 
     getUsersDetails(); 
     localStorage.removeItem("deleteMe");
-    window.location.reload();
+    // window.location.reload();
   
 };
 
