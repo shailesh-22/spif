@@ -127,7 +127,7 @@ const Login = () => {
                         </button>
                         <BottomHeading>
                         <Typography >Forgot password?</Typography>
-                        <Typography  style={{ color: '#393f81' }}>Don't have an account? <Link to="/signup2" style={{ color: '#393f81' }}>Register here</Link></Typography>
+                        <Typography  style={{ color: '#393f81' }}>Don't have an account? <Link to="/signup" style={{ color: '#393f81' }}>Register here</Link></Typography>
                         </BottomHeading>
                     </form>
                 </div>
