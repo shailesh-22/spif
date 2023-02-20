@@ -82,7 +82,7 @@ export default function UpdateData() {
                   <TableHead>
                     {/* <TableHead style={{display:'flex', alignItems:'center'}}>Update Statement</TableHead> */}
 
-                    <TableRow>
+                    <TableRow >
 
                       {/* <TableCell align="left">Q.No</TableCell> */}
                       <TableCell align="left">Questions</TableCell>
