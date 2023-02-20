@@ -44,7 +44,9 @@ export default function DataTableTest() {
   const [rowdata, setRowdata] = useState([]);
   const [rowsPerPage, setRowsPerPage] = useState(10);
   const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
+
+  // const handleOpen = () => setOpen(true);
+
   const handleClose = () => setOpen(false);
 
   useEffect(() => {
@@ -129,6 +131,7 @@ let deleteApi = async () => {
 
 const navigate = useNavigate();
 
+
   return (
 
     <>
@@ -173,8 +176,10 @@ const navigate = useNavigate();
                       <TextField {...params} label="Statements" />
                     )}
                   />
+
+            {/*   Add slide */  }      
                    <Box   m={1} >
-                  <Button variant="contained" onClick={handleOpen}>
+                  <Button variant="contained" onClick={ ()=> navigate('/addData')}>
                   Add Slide
                   </Button>
                   </Box>

@@ -20,6 +20,8 @@ import EditData from './components/pages/Settings/EditData';
 import Sample from './components/pages/Settings/Sample';
 import Register2 from './components/Registration/Register2';
 import UpdateData from './components/pages/Settings/UpdateData';
+import AddData from './components/pages/Settings/AddData';
+import Add from './components/pages/Settings/Add';
 
 function App() {
 
@@ -39,6 +41,7 @@ function App() {
         <Route path="/navbar" exact element={<Protected  ><Navbar/></Protected> }></Route>
         <Route path="/dashboard" element={<Protected  > <Dashboard /> </Protected>} />
         <Route path="/register2" element={<Protected> <Register2 /> </Protected>} />
+        <Route path="/addData" element={<Protected> <AddData /> </Protected>} />
         <Route path="/register" element={<Protected> <Register /> </Protected>} />
         <Route path="/terms_conditions" element={<Protected>  <TermsConditions/> </Protected>} />
         <Route path="/assessment-test" element={<Protected> <AssessmentTest/> </Protected>} />
@@ -47,6 +50,8 @@ function App() {
         <Route path="/admin-statement" element={<Protected> <AdminStatement/> </Protected>} />
         <Route path="/edit-data/:sStatementID" element={<Protected> <EditData/> </Protected> } />
         <Route path="/updatedata/:sStatementID" element={<Protected> <UpdateData/> </Protected> } />
+        <Route path='/add' element={ <Add/> } />
+
       </Routes>
       </BrowserRouter>   
     </div>
