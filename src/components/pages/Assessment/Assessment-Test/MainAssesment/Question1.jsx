@@ -6,6 +6,7 @@ import QuestionHeader from './QuestionHeader';
 import Timer from './Timer';
 import CircularProgress from "@mui/material/CircularProgress";
 import './Question1.css'
+import Popup from './Popup';
 
 
 const Question1 = ({ questions, loading, questionPerPage, currentPage, setCurrentPage, indeOfFirstQues, totalQuestions }) => {
@@ -22,7 +23,7 @@ const Question1 = ({ questions, loading, questionPerPage, currentPage, setCurren
   const [ selected, setSelected ] = useState();
   const[ error, setError ] = useState(false);
 
-  // const [open, setOpen] = useState(false);
+  const [openPopup, setOpenPopup] = useState(false);
   // const [score, setScore] = useState(0);
   // useEffect(()=>{
   //   if(localStorage.getItem("item")==null)  //if item array is not present before 
@@ -66,7 +67,7 @@ const Question1 = ({ questions, loading, questionPerPage, currentPage, setCurren
               return (
                 <div key={question.sStatementID} className='d-flex question'>
                   <div className='body  px-3'>
-                    <h3 className='w-100'>{question.sDescription}</h3>
+                    <h5 className='w-100'>{question.sDescription}</h5>
                     <hr />
                     {
                       question.sOptions.length === null &&
@@ -142,9 +143,8 @@ const Question1 = ({ questions, loading, questionPerPage, currentPage, setCurren
                                 name={question.sStatementID}
                                 value={option}
                                 onChange={(e) => { setAnswers(e.target.value); }}
-                                onClick={openPopover}
-                                disabled= { selected }
-                              />
+                                onClick={()=> {setOpenPopup(true); openPopover();} }
+                                disabled= { selected }                              />
                               {option.text}
                             </label>
                             {/* <Box>
@@ -153,12 +153,11 @@ const Question1 = ({ questions, loading, questionPerPage, currentPage, setCurren
 
 
                             {/* When user click the wrong Answer(input)-->The Popup will display */}
-                   
-                            <Popper
+
+                            {/* <Popper
                               open={open}
                               anchorEl={anchor}
-                              className='popper'  
-                                                         
+                              className='popper'                              
                             >
                               <div className='option-popper-title'>
                                 <Typography >  The Reason for wrong answer </Typography>
@@ -174,8 +173,13 @@ const Question1 = ({ questions, loading, questionPerPage, currentPage, setCurren
 
                               </div>
 
-                            </Popper>
-                        
+                            </Popper> */}
+                            <Popup
+                            openPopup= {openPopup}
+                            setOpenPopup= {setOpenPopup}
+                            >
+
+                            </Popup>
                           </div>
                         )
                       })
