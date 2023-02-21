@@ -2,6 +2,26 @@ import { useState } from "react";
 import axios from "axios";
 import { Link} from "react-router-dom";
 import styles from "./styles.module.css";
+import { Box, styled, Typography } from "@mui/material";
+
+
+const LeftComponent = styled(Box)(({ theme }) => ({
+    
+    [theme.breakpoints.down('md')]: {
+        display: 'none'
+    }
+}));
+
+const BottomHeading = styled(Box)(({ theme}) => ({
+    marginBottom : '5px',
+     textAlign : 'center',
+   [theme.breakpoints.up('md')]: {
+   
+       display: 'none',
+   }
+})) 
+
+
 
 const Signup = () => {
     const [data, setData] = useState({
@@ -40,7 +60,7 @@ const Signup = () => {
     return (
         <div className={styles.signup_container}>
             <div className={styles.signup_form_container}>
-                <div className={styles.left}>
+                <LeftComponent className={styles.left}>
                 <img src="https://www.spif.in/wp-content/uploads/2021/08/contact-image.png" alt="left_image" width={300} />
                     <h1>Welcome</h1>
                     <Link to="/">
@@ -48,7 +68,7 @@ const Signup = () => {
                             Sign in
                         </button>
                     </Link>
-                </div>
+                </LeftComponent>
                 <div className={styles.right}>
                     <form className={styles.form_container} onSubmit={handleSubmit}>
                     <img className="logo" src="https://www.spif.in/wp-content/uploads/2021/08/new-logo3.png" alt="logo" width={160}/>
@@ -93,7 +113,13 @@ const Signup = () => {
                         <button type="submit" className={styles.green_btn}>
                          Sign Up
                         </button>
+
+                        <BottomHeading>
+                        <Typography >Allready have an account?</Typography>
+                        <Typography  style={{ color: '#393f81' }}><Link to="/" style={{ color: '#393f81' }}>Sign In here</Link></Typography>
+                        </BottomHeading> 
                     </form>
+                   
                 </div>
             </div>
         </div>

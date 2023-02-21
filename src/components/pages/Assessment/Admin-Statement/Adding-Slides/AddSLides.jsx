@@ -10,9 +10,7 @@ import OnlyVideo from './SlideComponents/OnlyVideo';
 import OnlyAudio from './SlideComponents/OnlyAudio';
 
 const AddSLides = ({questions, setOpen, setOpenQA, setTitle }) => {
-
-    
-    
+      
     const slideComponents = [
         { label : "Q/A", value : 1 },
         { label : "Para", value : 2 },
@@ -27,7 +25,6 @@ const AddSLides = ({questions, setOpen, setOpenQA, setTitle }) => {
     const handleChange = (e) =>{
         setDropDownVal(e.value);
      }
-
 
     const renderSlideContent = ()=>{
 

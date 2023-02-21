@@ -18,6 +18,10 @@ import Signup2 from './components/Signup/Signup2';
 import DataTableTest from './components/pages/Settings/DataTableTest';
 import EditData from './components/pages/Settings/EditData';
 import Sample from './components/pages/Settings/Sample';
+import Register2 from './components/Registration/Register2';
+import UpdateData from './components/pages/Settings/UpdateData';
+import AddData from './components/pages/Settings/AddData';
+import Add from './components/pages/Settings/Add';
 
 function App() {
 
@@ -27,24 +31,27 @@ function App() {
     <div>
       <BrowserRouter>
       <Routes>
-    
       <Route exact path="/"  element={  <Login/> }></Route>
       <Route exact path="/sample"  element={ <Sample /> }></Route>
       <Route path="/login2" exact element={ <Login2/> }></Route>
       <Route path="/signup2" exact element={ <Signup2/> }></Route>
       <Route path="/signup" exact element={ <Signup/> }></Route>
-      <Route path="/Data-table" exact element={<Protected> <DataTableTest /> </Protected>  }></Route>
+      <Route path="/Data-table" exact element={<Protected> <DataTableTest /> </Protected>   }></Route>
         <Route path="/" exact element={<Protected><Sidenav/></Protected>}></Route>
         <Route path="/navbar" exact element={<Protected  ><Navbar/></Protected> }></Route>
         <Route path="/dashboard" element={<Protected  > <Dashboard /> </Protected>} />
-      
+        <Route path="/register2" element={<Protected> <Register2 /> </Protected>} />
+        <Route path="/addData" element={<Protected> <AddData /> </Protected>} />
         <Route path="/register" element={<Protected> <Register /> </Protected>} />
         <Route path="/terms_conditions" element={<Protected>  <TermsConditions/> </Protected>} />
         <Route path="/assessment-test" element={<Protected> <AssessmentTest/> </Protected>} />
         <Route path="/test-result" element={<Protected>  <TestResult/> </Protected>} />
         <Route path="/certification-page" element={<Protected>  <CertificationPage/> </Protected>} />
         <Route path="/admin-statement" element={<Protected> <AdminStatement/> </Protected>} />
-        <Route path="/edit-data/:sStatementID" element={<Protected> <EditData/> </Protected>} />
+        <Route path="/edit-data/:sStatementID" element={<Protected> <EditData/> </Protected> } />
+        <Route path="/updatedata/:sStatementID" element={<Protected> <UpdateData/> </Protected> } />
+        <Route path='/add' element={ <Add/> } />
+
       </Routes>
       </BrowserRouter>   
     </div>

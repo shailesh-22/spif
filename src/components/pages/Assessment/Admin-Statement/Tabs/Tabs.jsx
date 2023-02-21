@@ -16,11 +16,9 @@ import { Switch, FormControlLabel } from '@mui/material'
 import swal from "sweetalert";
 
 
-
 const Tabs = ({ questions }) => {
 
-
-
+  
   // const api_url = `http://localhost:3004/questions/`;
 
   // const deleteQuestion = async (id) => {
@@ -234,7 +232,7 @@ const Tabs = ({ questions }) => {
                       border: "1px solid rgba(55, 59, 59, 0.2)",
                       borderRadius: "5px",
                     }}
-
+                    
                   />
                 </div>
                 <hr />
@@ -437,9 +435,9 @@ const Tabs = ({ questions }) => {
                 <div className="tab-body-btns">
                   <button
                     className="btn btn-primary"
-                    onClick={() => {
-                      handleUpdate();
-                    }}
+                    // onClick={() => {
+                    //   handleUpdate();
+                    // }}
                   >
                     UPDATE
                   </button>
