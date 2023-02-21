@@ -120,7 +120,7 @@ export default function Sidenav() {
               </ListItemButton>
             </ListItem>
 
-            <ListItem  disablePadding sx={{ display: 'block' }} onClick={()=>{ navigate("/register")}}>
+            <ListItem  disablePadding sx={{ display: 'block' }} onClick={()=>{ navigate("/register2")}}>
               <ListItemButton
                 sx={{
                   minHeight: 48,

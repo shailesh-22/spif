@@ -6,24 +6,41 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import { TextField } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import swal from "sweetalert";
+import Swal from "sweetalert2";
 import './dialog.css'
+import { useState } from 'react';
+import Register2 from './Register2';
 
 
 export default function AlertDialog({open,handleClose}) {
 
   let navigate = useNavigate();
 
+  const [resetButton, setResetButton] = useState('Reset');
+
   const hamdleUpdate = ()=> {
-    
-    swal({
-      title: "Done!",
-      text: "Profile created successfully!",
-      icon: "success",
-      button: "Ok",
-    });
-    navigate('/terms_conditions')
-  
+
+  handleClose();
+
+    Swal.fire({
+      title: 'Thank you for filling in your personal details!',
+      text: "Would you like to take the Assesement?",
+      icon: 'success',
+      showCancelButton: true,
+      cancelButtonText: 'Later',
+      confirmButtonText: 'Now',
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33', 
+      reverseButtons: true
+    }).then((result) => {
+      if (result.isConfirmed) {
+        navigate("/terms_conditions")
+      }
+      else{
+        setResetButton('Edit')
+      }
+    })
+   
   }
   return (
     <div>
@@ -50,7 +67,9 @@ export default function AlertDialog({open,handleClose}) {
             Validate
           </Button>
         </DialogActions>
+     <Button resetButton={resetButton} />
       </Dialog>
+      
     </div>
   );
 }

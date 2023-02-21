@@ -1,47 +1,48 @@
+import { TextField } from '@mui/material'
 import React from 'react'
 import { Link } from 'react-router-dom'
 
 const Signup2 = () => {
   return (
     <div>
-        <section className="vh-100" style={{backgroundColor: '#9A616D'}}>
-  <div className="container py-5 h-100">
+        <section className="vh-100"  style={{ backgroundColor: '#f5f5f5' }}>
+  <div className="container h-100">
     <div className="row d-flex justify-content-center align-items-center h-100">
       <div className="col col-xl-10">
         <div className="card" style={{borderRadius: '1rem'}}>
           <div className="row g-0">
+
+          <div className="d-flex align-items-center  col-md-6 col-lg-5 d-none d-md-block" style={{ backgroundColor: "#00d084" ,  borderTopLeftRadius: '1rem', borderBottomLeftRadius: '1rem'  }}   >
+              <img src="https://www.spif.in/wp-content/uploads/2021/08/contact-image.png" alt="login form" className="img-fluid" style={{borderRadius: '1rem 0 0 1rem', marginTop: '150px' }} />
+            </div>
             
             <div className="col-md-6 col-lg-7 d-flex align-items-center">
-              <div className="card-body p-3 p-lg-5 text-black">
-                <form>
-                  <div className="d-flex justify-content-center align-items-center mb-3 pb-1">
+              <div className="card-body  text-black">
+                <form >
+                  <div className="d-flex justify-content-center align-items-center  " >
                    
                     <img src="https://www.spif.in/wp-content/uploads/2021/08/new-logo3.png" style={{width:"150px"}} alt="" />
                   </div>
-                  <h5 className="fw-normal mb-3 pb-3" style={{letterSpacing: 1}}>Sign up to your account</h5>
+                  <h5 className="fw-normal " style={{letterSpacing: 1}}>Sign up to your account</h5>
 
                   <div className="form-outline mb-4">
-                    <input type="text"  className="form-control form-control-lg" />
-                    <label className="form-label" htmlFor="form2Example17">First Name</label>
+                  <TextField variant='outlined' type='text' label="First Name" placeholder='Enter Your First Nmae' name='firstName' fullWidth style={{ animationName : 'unset' }}/> 
                   </div>
 
                   <div className="form-outline mb-4">
-                    <input type="text"  className="form-control form-control-lg" />
-                    <label className="form-label" htmlFor="form2Example17">Last Name</label>
+                  <TextField variant='outlined' type='text' label="Last Name" placeholder='Enter Your Last Nmae' name='lastName' fullWidth /> 
                   </div>
 
                   <div className="form-outline mb-4">
-                    <input type="email" className="form-control form-control-lg" />
-                    <label className="form-label" htmlFor="form2Example17">Email address</label>
+                  <TextField variant='outlined' type='email' label="Email" placeholder='Email' name='email' fullWidth style={{borderColor: 'unset'}} />
                   </div>
 
                   <div className="form-outline mb-4">
-                    <input type="password"  className="form-control form-control-lg" />
-                    <label className="form-label" htmlFor="form2Example27">Password</label>
+                  <TextField variant='outlined' type='password' label="Password" placeholder='Password' name='password' fullWidth style={{borderColor: 'unset'}} />
                   </div>
 
                   <div className="pt-1 mb-4">
-                    <button className="btn btn-success btn-lg btn-block" type="button">Sign up</button>
+                    <button className="btn btn-primary btn-lg btn-block" type="button">Sign up</button>
                   </div>
 
                
@@ -50,9 +51,7 @@ const Signup2 = () => {
                 </form>
               </div>
             </div>
-            <div className="d-flex align-items-center  col-md-6 col-lg-5 d-none d-md-block">
-              <img src="https://www.spif.in/wp-content/uploads/2021/08/contact-image.png" alt="login form" className="img-fluid" style={{borderRadius: '1rem 0 0 1rem', height:"590px"}} />
-            </div>
+            
           </div>
         </div>
       </div>
