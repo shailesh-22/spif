@@ -278,6 +278,7 @@ const Tabs = ({ questions }) => {
                                 },
                               }}
                             >
+                              
                               <TableCell component="th" scope="row">
                                 <TextareaAutosize
                                   maxRows={4}

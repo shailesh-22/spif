@@ -82,7 +82,7 @@ export default function EditData() {
 
                   <TableHead>
                     <TableRow>
-                      <TableCell align="left">Questions</TableCell>
+                      <TableCell align="left" style={{fontSize:'18px',fontWeight: 700}}>Questions</TableCell>
                     </TableRow>
                   </TableHead>
 
@@ -96,8 +96,9 @@ export default function EditData() {
                       <TextareaAutosize
                     maxRows={4}
                     aria-label="maximum height"
-                    defaultValue={user.sDescription}
+                    onChange={(e) => onValueChange(e)}
                     value={user.sDescription}
+                    name='sDescription'
                     style={{
                       width: "100%",
                       height: "150px",
@@ -120,13 +121,13 @@ export default function EditData() {
                   <TableHead>
                     {/* <TableHead style={{display:'flex', alignItems:'center'}}>Update Statement</TableHead> */}
 
-                    <TableRow>
+                    <TableRow  >
 
                       {/* <TableCell align="left">Q.No</TableCell> */}
-                      <TableCell align="center" style={{ width: "60px" }}>No </TableCell>
-                      <TableCell align="center"> Options</TableCell>
-                      <TableCell align="center"> Prompt</TableCell>
-                      <TableCell align="center"> Answer</TableCell>
+                      <TableCell align="center" style={{ width: "60px", fontSize:'18px',fontWeight: 700 }}>No </TableCell>
+                      <TableCell align="center" style={{ fontSize:'18px', fontWeight: 700 }}> Options</TableCell>
+                      <TableCell align="center" style={{ fontSize:'18px',fontWeight: 700 }}> Prompt</TableCell>
+                      <TableCell align="center" style={{ fontSize:'18px',fontWeight: 700 }}> Answer(Yes/No)</TableCell>
 
                     </TableRow>
                   </TableHead>
@@ -143,8 +144,46 @@ export default function EditData() {
 
                           >
                             <TableCell align="center"> {i + 1} </TableCell>
-                            <TableCell align="center">  <TextField fullWidth onChange={(e) => onValueChange(e)} name='text' id='outlined basic' variant='standard' size='small' value={option.text} sx={{ minWidth: 'auto' }} /> </TableCell>
-                            <TableCell align="center">  <TextField fullWidth onChange={(e) => onValueChange(e)} name='isPrompt' id='outlined basic' variant='standard' size='small' value={option.isPrompt} sx={{ minWidth: 'auto' }} />   </TableCell>
+                            {/* <TableCell align="center">  <TextField fullWidth onChange={(e) => onValueChange(e)} name='text' id='outlined basic' variant='standard' size='small' value={option.text} sx={{ minWidth: 'auto' }} /> </TableCell> */}
+                            <TableCell component="th" scope="row">
+                            <TextareaAutosize
+                                  maxRows={4}
+                                  aria-label="maximum height"
+                                  value={option.text} 
+                                  name='text'
+                                  size='small'
+                                  onChange={(e) => onValueChange(e)}
+                                  style={{
+                                    width: "100%",
+                                    fontSize: 17,
+                                    padding: "10px",
+                                    outline: "none",
+                                    border: "1px solid rgba(55, 59, 59, 0.2)",
+                                    borderRadius: "5px",
+                                  }}
+                                />
+                            </TableCell>
+
+                            {/* <TableCell align="center">  <TextField fullWidth onChange={(e) => onValueChange(e)} name='isPrompt' id='outlined basic' variant='standard' size='small' value={option.isPrompt} sx={{ minWidth: 'auto' }} />   </TableCell> */}
+
+                            <TableCell align="center">
+                                <TextareaAutosize
+                                  maxRows={4}
+                                  aria-label="maximum height"
+                                  value={option.isPrompt}
+                                  name='isPrompt'
+                                  style={{
+                                    width: "100%",
+                                    fontSize: 17,
+                                    padding: "10px",
+                                    outline: "none",
+                                    border: "1px solid rgba(55, 59, 59, 0.2)",
+                                    borderRadius: "5px",
+                                  }}
+                                />
+                              </TableCell>
+
+
                             <TableCell align="center">    <Switch checked={option.isAnswer} onChange={handleChange} name="isAnswer" value={option.isAnswer} /> </TableCell>
 
                           </TableRow>
