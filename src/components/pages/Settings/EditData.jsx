@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Paper, Box, Button, Typography } from "@mui/material";
+import { Paper, Box, Button, Typography, TextareaAutosize } from "@mui/material";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -92,8 +92,22 @@ export default function EditData() {
                       role="checkbox"
                       tabIndex={-1}
                     >
-                      <TableCell align="left">  <TextField fullWidth onChange={(e) => onValueChange(e)} name='sDescription' id='outlined basic' variant='standard' size='small' value={user.sDescription} sx={{ minWidth: 'auto' }} />  </TableCell>
-
+                      {/* <TableCell align="left">  <TextField fullWidth onChange={(e) => onValueChange(e)} name='sDescription' id='outlined basic' variant='standard' size='small' value={user.sDescription} sx={{ minWidth: 'auto' }} />  </TableCell> */}
+                      <TextareaAutosize
+                    maxRows={4}
+                    aria-label="maximum height"
+                    defaultValue={user.sDescription}
+                    value={user.sDescription}
+                    style={{
+                      width: "100%",
+                      height: "150px",
+                      padding: "10px",
+                      outline: "none",
+                      border: "1px solid rgba(55, 59, 59, 0.2)",
+                      borderRadius: "5px",
+                    }}
+                    
+                  /> 
                     </TableRow>
 
                   </TableBody>
