@@ -2,10 +2,20 @@ import React from 'react'
 import './testResult.css'
 import Tooltip from '@mui/material/Tooltip';
 import { Link } from 'react-router-dom';
+import { Box } from '@mui/material';
+import Navbar from '../../../../../Menubar/Navbar';
 
 
 const TestResult = () => {
   return (
+
+  <div >
+      <Navbar /> 
+     
+      <Box sx={{ display: 'flex' }}>
+        <Box component="main" sx={{ flexGrow: 1 }}>
+
+
     <div className='test-result'>
       <div className="card test-card" >
         <div className="card-body">
@@ -35,6 +45,12 @@ const TestResult = () => {
         </div>
       </div>
     </div>
+    </Box>
+     </Box> 
+
+    </div>
+
+
   )
 }
 

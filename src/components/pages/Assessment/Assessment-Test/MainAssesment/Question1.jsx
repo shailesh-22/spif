@@ -6,7 +6,7 @@ import QuestionHeader from './QuestionHeader';
 import Timer from './Timer';
 import CircularProgress from "@mui/material/CircularProgress";
 import './Question1.css'
-import Popup from './Popup';
+// import Popup from './Popup';
 
 
 const Question1 = ({ questions, loading, questionPerPage, currentPage, setCurrentPage, indeOfFirstQues, totalQuestions }) => {
@@ -174,12 +174,12 @@ const Question1 = ({ questions, loading, questionPerPage, currentPage, setCurren
                               </div>
 
                             </Popper> */}
-                            <Popup
+                            {/* <Popup
                             openPopup= {openPopup}
                             setOpenPopup= {setOpenPopup}
                             >
 
-                            </Popup>
+                            </Popup> */}
                           </div>
                         )
                       })
