@@ -195,9 +195,9 @@ const navigate = useNavigate();
                <Table stickyHeader aria-label="sticky table">
                  <TableHead>
                    <TableRow>
-                     <TableCell align="left">Q.No</TableCell>
-                     <TableCell align="left"> Questions</TableCell>
-                     <TableCell align="left">Actions</TableCell>
+                     <TableCell align="center" style={{ fontSize:'18px',fontWeight: 500 }}>Q.No</TableCell>
+                     <TableCell align="center" style={{ fontSize:'18px',fontWeight: 500 }}> Questions</TableCell>
+                     <TableCell align="center" style={{ fontSize:'18px',fontWeight: 500 }}>Actions</TableCell>
                    </TableRow>
                  </TableHead>
                  <TableBody>
