@@ -63,11 +63,11 @@ const Register2 = () => {
 
   return (
     <div class="container">
-
       <Navbar />
       <Box height={50} />
       <Box sx={{ display: 'flex' }}>
         <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+          
           <Typography
             gutterbutton="true"
             variant="h5"
