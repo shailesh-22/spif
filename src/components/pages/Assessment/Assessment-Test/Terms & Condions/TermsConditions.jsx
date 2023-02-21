@@ -29,7 +29,7 @@ const TermsConditions = () => {
         <div className='test-rules'>
           <h3>Welcome To Our Online Assesment</h3>
 
-          <h5>This Test will contains 10 questions.</h5>
+          <h5>This Test has 10 questions.</h5>
         <Paper elevation={20}>
           <div className='test-rule-list'>
             
@@ -44,7 +44,6 @@ const TermsConditions = () => {
                 <li>DisAgree with the statement as description of you</li>
                 <li>Strongly DisAgree with the statement as description of you</li>
                 <li>Neutral with the statement as description of you</li>
-                <li>Revie button shos the Answered and Not Answered Question</li>
             </ol>
 
             <h3>All the Best!!</h3>

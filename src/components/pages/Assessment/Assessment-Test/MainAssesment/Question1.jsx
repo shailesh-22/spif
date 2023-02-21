@@ -66,7 +66,7 @@ const Question1 = ({ questions, loading, questionPerPage, currentPage, setCurren
               return (
                 <div key={question.sStatementID} className='d-flex question'>
                   <div className='body  px-3'>
-                    <h3 className='w-100'>{question.sDescription}</h3>
+                    <h5 className='w-100'>{question.sDescription}</h5>
                     <hr />
                     {
                       question.sOptions.length === null &&

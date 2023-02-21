@@ -52,10 +52,10 @@
     padding-top: 10px;
 }
 
-.question h3{
+.question h5{
     margin: 15px 0;
     width: 98.5vw;
-    font-size: 25px;
+    font-size: 22px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: bolder;
 }

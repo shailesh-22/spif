@@ -181,7 +181,6 @@ const Tabs = ({ questions }) => {
       console.log(getitem);
       localStorage.removeItem("items");
     }
-
   };
 
   // const handleDeleteHole = async (id) => {
@@ -191,8 +190,6 @@ const Tabs = ({ questions }) => {
   //   await axios.delete(`http://103.160.153.38:8020/limens/statements_view/${id}`) 
   //   history.push('/dashboard')
   // }
-
-
 
   return (
     <div className="tabTypeQuestion">
@@ -437,9 +434,9 @@ const Tabs = ({ questions }) => {
                 <div className="tab-body-btns">
                   <button
                     className="btn btn-primary"
-                    onClick={() => {
-                      handleUpdate();
-                    }}
+                    // onClick={() => {
+                    //   handleUpdate();
+                    // }}
                   >
                     UPDATE
                   </button>
